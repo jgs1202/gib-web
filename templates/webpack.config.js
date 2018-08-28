@@ -13,7 +13,9 @@ module.exports = {
       {test: /\.vue$/, loader: 'vue-loader', options: {loaders: {sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax'}}},
       {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/},
       {test: /(\.css$)/, loaders: ['style-loader', 'css-loader']},
-      {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'file-loader'}
+      {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'file-loader'},
+      {test: /\.js$/, loader: 'babel-loader', include: path.resolve(__dirname, 'node_modules', 'd3-downloadable')},
+      {test: /\.js$/, loader: 'babel-loader', include: path.resolve(__dirname, 'node_modules', 'svg-dataurl')}
     ]
   },
   resolve: {
