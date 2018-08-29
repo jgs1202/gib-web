@@ -3,10 +3,10 @@
     <p class='explain'>You can EASILY access 4 GIB layous.</p>
     <ol class='images'>
       <li>
-        <img src="../assets/stgib.png">
+        <img id='stgib'>
       </li>
       <li>
-        <img src="../assets/cdgib.png">
+        <img id='cdgib'>
       </li>
     </ol>
     <ol class='logos'>
@@ -19,10 +19,10 @@
     </ol>
     <ol class='images'>
       <li>
-        <img src="../assets/fdgib.png">
+        <img id='fdgib'>
       </li>
       <li>
-        <img src="../assets/trgib.png">
+        <img id='trgib'>
       </li>
     </ol>
     <ol class='logos'>
@@ -37,12 +37,25 @@
 </template>
 
 <script>
+import $ from 'jquery'
 export default {
   name: 'gib-example',
   data () {
     return {
-      sample: 'aiu'
+      sample: 'aiu',
+      stgib: null,
+      cdgib: null,
+      fdgib: null,
+      trgib: null
     }
+  },
+  mounted: function() {
+    let that = this
+    that.stgib = $('#stgib')[0]
+    that.cdgib = $('#cdgib')[0]
+    that.fdgib = $('#fdgib')[0]
+    that.trgib = $('#trgib')[0]
+    console.log(that.stgib)
   }
 }
 </script>
