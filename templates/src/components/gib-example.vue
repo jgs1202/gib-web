@@ -55,7 +55,29 @@ export default {
     that.cdgib = $('#cdgib')[0]
     that.fdgib = $('#fdgib')[0]
     that.trgib = $('#trgib')[0]
-    console.log(that.stgib)
+    that.download()
+  },
+  method: {
+    download: function() {
+      $.ajax({
+        url: 'http://35.200.124.149/image/stgib.png'
+      }).done((data, status, jqXHR) => {
+        let downloadData = new Blob([data])
+        let filename = 'stgib.png'
+        if (window.navigator.msSaveBlob) {
+          window.navigator.msSaveBlob(downloadData, filename)
+        } else {
+          let downloadUrl = (window.URL || window.webkitURL).createObjectURL(downloadData)
+          let link = document.createElement('a')
+          link.href = downloadUrl
+          link.download = filename
+          link.click()
+          (window.URL || window.webkitURL).revokeObjectURL(downloadUrl)
+        }
+      }).fail((data, statujs, jqXHR) => {
+        alert('Image download fail!')
+      })
+    }
   }
 }
 </script>
