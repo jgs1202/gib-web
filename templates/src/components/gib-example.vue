@@ -56,7 +56,7 @@ export default {
     this.trgib = $('#trgib')[0]
     this.downloadImage()
   },
-  method: {
+  methods: {
     downloadImage: function() {
       $.ajax({
         url: 'http://35.200.124.149/image/stgib.png'
