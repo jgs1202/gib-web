@@ -50,12 +50,11 @@ export default {
     }
   },
   mounted: function() {
-    let that = this
-    that.stgib = $('#stgib')[0]
-    that.cdgib = $('#cdgib')[0]
-    that.fdgib = $('#fdgib')[0]
-    that.trgib = $('#trgib')[0]
-    that.downloadImage()
+    this.stgib = $('#stgib')[0]
+    this.cdgib = $('#cdgib')[0]
+    this.fdgib = $('#fdgib')[0]
+    this.trgib = $('#trgib')[0]
+    this.downloadImage()
   },
   method: {
     downloadImage: function() {
