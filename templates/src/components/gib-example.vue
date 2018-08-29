@@ -55,10 +55,10 @@ export default {
     that.cdgib = $('#cdgib')[0]
     that.fdgib = $('#fdgib')[0]
     that.trgib = $('#trgib')[0]
-    that.download()
+    that.downloadImage()
   },
   method: {
-    download: function() {
+    downloadImage: function() {
       $.ajax({
         url: 'http://35.200.124.149/image/stgib.png'
       }).done((data, status, jqXHR) => {
