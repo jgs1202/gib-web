@@ -46,6 +46,13 @@
         </div>
       </el-main>
     </el-container>
+    <br><br>
+    <label for="down_sample" class='square_btn'>
+        <h3>Download Sample Data</h3>
+      <form name='sampleData' class='sampleData' style='display:none;'>
+        <input type="button" name="down_sample" id='down_sample' v-on:click='sampleData'>
+      </form>
+    </label>
   </div>
 </template>
 
@@ -105,13 +112,22 @@ export default {
     },
     resetted: function() {
       var that = this
-      console.log(that.zoom)
       d3.select('svg').transition()
         .duration(500)
         .call(that.zoom.transform, d3.zoomIdentity);
     },
     load: function (e) {
       let that = this
+
+      $.ajax({
+        type: 'GET',
+        url:'http://35.200.124.149/image/sample_data.json',
+        dataType: 'json',
+        success: function(json){
+          console.log(json)
+        }
+      })
+
       let result = e.target.files[0]
       if (result.name.slice(-5) !== '.json') {
         swal('Only a json file is valid.')
@@ -123,6 +139,22 @@ export default {
         }, false)
       }
       that.current = result.name
+    },
+    sampleData: function() {
+      var xmlHttpRequest = new XMLHttpRequest();
+      xmlHttpRequest.onreadystatechange = function()
+      {
+          if( this.readyState == 4 && this.status == 200 )
+          {
+              if( this.response )
+              {
+                  console.log(this.response);
+              }
+          }
+      }
+      xmlHttpRequest.open( 'GET', 'http://35.200.124.149/image/sample_data.json', true);
+      xmlHttpRequest.responseType = 'json';
+      xmlHttpRequest.send( null );
     },
     sendData: function (e) {
       let that = this
@@ -140,7 +172,7 @@ export default {
           // jsonpCallback: 'data',
           // dataType: 'text',
           contentType: 'application/json;charset=UTF-8',
-          timeout: 10000
+          timeout: 100000
         })
         .done(function(res) {
           that.message = null
@@ -201,6 +233,7 @@ export default {
               }
             })
             selection.on('click', function(d, i){
+              console.log('click')
               that.selectNode(d, i)
             })
             selection.on('mouseout', function(d, i){
@@ -292,6 +325,7 @@ export default {
             relLinks.push(that.gib.links[i])
           }
         }
+        console.log(relLinks)
         for (let n=0; n < relLinks.length; n++){
           if (relLinks[n].source === d.name){
             relNodes.push(relLinks[n].target)
@@ -302,20 +336,29 @@ export default {
         d3.selectAll("circle")
           .each(function(d, i) {
             var selection = d3.select(this)
-            for (let n=0; n<relNodes.length; n++){
-              if (d.name == relNodes[n]) {
-                that.related[parseInt(relNodes[n])].push(select_number)
-                if ($.inArray(d, that.selected) < 0){
-                  selection.attr('r', that.relatedSize)
+            if (relLinks.length !== 0) {
+              for (let n=0; n<relNodes.length; n++){
+                if (d.name == relNodes[n]) {
+                  that.related[parseInt(relNodes[n])].push(select_number)
+                  if ($.inArray(d, that.selected) < 0){
+                    selection.attr('r', that.relatedSize)
+                  }
+                }
+                else if (d.name === preference) {
+                  selection.attr('r', that.selectSize)
+                  selection.attr('stroke', 'yellow')
+                  selection.attr('stroke-width', 3)
+                  if ($.inArray(d, that.selected) < 0){
+                    that.selected.push(d)
+                  }
                 }
               }
-              else if (d.name === preference) {
-                selection.attr('r', that.selectSize)
-                selection.attr('stroke', 'yellow')
-                selection.attr('stroke-width', 3)
-                if ($.inArray(d, that.selected) < 0){
-                  that.selected.push(d)
-                }
+            } else if (d.name === preference) {
+              selection.attr('r', that.selectSize)
+              selection.attr('stroke', 'yellow')
+              selection.attr('stroke-width', 3)
+              if ($.inArray(d, that.selected) < 0){
+                that.selected.push(d)
               }
             }
           })
@@ -354,13 +397,11 @@ export default {
                   that.related[n] = front.concat(back)
                   if ((that.related[n].length === 0) && ($.inArray(that.gib.nodes[n], that.selected) < 0)){
                     rmList.push(n)
-                    console.log(n)
                   }
                 }
               }
             }
           })
-        console.log(rmList)
         d3.selectAll("circle")
           .each(function(d, i) {
             var selection = d3.select(this)
