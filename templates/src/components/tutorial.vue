@@ -2,7 +2,6 @@
   <div>
     <TabMenu></TabMenu>
     <div>
-      <input type="button" value="click" v-on:click='click'>
       <!-- <link rel="stylesheet" href="http://35.200.124.149/css/introjs.css" crossorigin='anonymous'> -->
       <el-container class='bottom'>
       <el-aside width='20%'>
