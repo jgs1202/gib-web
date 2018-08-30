@@ -174,6 +174,7 @@ export default {
         let data = {}
         data.data = that.graph
         data.layout = that.layout
+        console.log(typeof JSON.stringify(data))
         $.ajax({
           // url: 'http://35.200.124.149:80/upload',
           url: 'http://35.200.124.149/upload',
