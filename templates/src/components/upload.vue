@@ -118,16 +118,6 @@ export default {
     },
     load: function (e) {
       let that = this
-
-      $.ajax({
-        type: 'GET',
-        url:'http://35.200.124.149/image/sample_data.json',
-        dataType: 'json',
-        success: function(json){
-          console.log(json)
-        }
-      })
-
       let result = e.target.files[0]
       if (result.name.slice(-5) !== '.json') {
         swal('Only a json file is valid.')
@@ -142,15 +132,19 @@ export default {
     },
     sampleData: function() {
       var xmlHttpRequest = new XMLHttpRequest();
-      xmlHttpRequest.onreadystatechange = function()
-      {
-          if( this.readyState == 4 && this.status == 200 )
-          {
-              if( this.response )
-              {
-                  console.log(this.response);
-              }
+      xmlHttpRequest.onreadystatechange = function() {
+        if( this.readyState == 4 && this.status == 200 ) {
+          if( this.response ) {
+            let json = JSON.stringify(this.response)
+            let blob = new Blob([json], {type: 'application/json'})
+            let url = URL.createObjectURL(blob)
+            let a = document.createElement('a')
+            a.download = 'sample_data.json'
+            a.href = url
+            a.textContent = 'download sample_data.json'
+            a.click()
           }
+        }
       }
       xmlHttpRequest.open( 'GET', 'http://35.200.124.149/image/sample_data.json', true);
       xmlHttpRequest.responseType = 'json';
