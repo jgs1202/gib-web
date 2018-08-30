@@ -2,6 +2,7 @@
   <div>
     <TabMenu></TabMenu>
     <div>
+      <input type="button" value="click" v-on:click='click'>
       <link rel="stylesheet" href="http://35.200.124.149/css/introjs.css" crossorigin='anonymous'>
       <el-container class='bottom'>
       <el-aside width='20%'>
@@ -68,9 +69,16 @@ export default {
   },
   mounted: function() {
     console.log('start')
-    console.log($intro())
+    // console.log($intro())
+    // this.$intro().start(); // start the guide
+    // this.$intro().showHints(); // show hints
+  },
+  methods: {
+    click: function () {
+      // console.log($intro())
     this.$intro().start(); // start the guide
     this.$intro().showHints(); // show hints
+    }
   }
 }
 </script>
