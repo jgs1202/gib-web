@@ -15,7 +15,6 @@ from .resize import sizing
 
 
 def application(data):
-    print(data)
     data = json.loads(data.decode('utf-8'))
     if 'dx' in data['data']['groups'][0]:
         if data['data']['groups'][-1]['dx'] > 900:
