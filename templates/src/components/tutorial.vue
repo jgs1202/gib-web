@@ -56,7 +56,7 @@ import TabMenu from './TabMenu.vue'
 import upload from './upload.vue'
 import VueIntro from 'vue-introjs'
 Vue.use(VueIntro)
-import 'intro.js/introjs.css'
+import '../assets/introjs.css'
 Vue.component('TabMenu', TabMenu)
 Vue.component('upload', upload)
 export default {
@@ -74,8 +74,8 @@ export default {
   },
   mounted: function() {
     console.log('start')
-    // this.$intro().start(); // start the guide
-    // this.$intro().showHints(); // show hints
+    this.$intro().start(); // start the guide
+    this.$intro().showHints(); // show hints
   }
 }
 </script>
