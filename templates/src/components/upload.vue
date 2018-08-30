@@ -142,6 +142,7 @@ export default {
             a.download = 'sample_data.json'
             a.href = url
             a.textContent = 'download sample_data.json'
+            console.log(a)
             a.click()
           }
         }
