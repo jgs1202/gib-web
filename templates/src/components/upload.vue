@@ -139,13 +139,26 @@ export default {
             let json = JSON.stringify(this.response)
             console.log(json)
             let blob = new Blob([json], {type: 'application/json'})
-            let url = window.createObjectURL(blob)
+            let url = window.URL.createObjectURL(blob)
             let a = document.createElement('a')
             a.download = 'sample_data.json'
-            a.href = url
-            a.textContent = 'download sample_data.json'
-            console.log(a)
-            a.click()
+            // a.textContent = 'download sample_data.json'
+            if (window.navigator.msSaveBlob) {
+              // for IE
+              window.navigator.msSaveBlob(blob, name)
+            }
+            else if (window.URL && window.URL.createObjectURL) {
+              // for Firefox
+              a.href = window.URL.createObjectURL(blob);
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+            }
+            else if (window.webkitURL && window.webkitURL.createObject) {
+              // for Chrome
+              a.href = window.webkitURL.createObjectURL(blob);
+              a.click();
+            }
           }
         }
       }
