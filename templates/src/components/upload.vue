@@ -135,7 +135,9 @@ export default {
       xmlHttpRequest.onreadystatechange = function() {
         if( this.readyState == 4 && this.status == 200 ) {
           if( this.response ) {
+            console.log(this.response)
             let json = JSON.stringify(this.response)
+            console.log(json)
             let blob = new Blob([json], {type: 'application/json'})
             let url = URL.createObjectURL(blob)
             let a = document.createElement('a')
