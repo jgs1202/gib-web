@@ -52,6 +52,10 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
+    new webpack.ProvidePlugin({
+            // other modules
+            introJs: ['intro.js', 'introJs']
+        }),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true,
       compress: {

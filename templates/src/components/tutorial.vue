@@ -3,7 +3,7 @@
     <TabMenu></TabMenu>
     <div>
       <input type="button" value="click" v-on:click='click'>
-      <link rel="stylesheet" href="http://35.200.124.149/css/introjs.css" crossorigin='anonymous'>
+      <!-- <link rel="stylesheet" href="http://35.200.124.149/css/introjs.css" crossorigin='anonymous'> -->
       <el-container class='bottom'>
       <el-aside width='20%'>
         <br><br>
@@ -51,11 +51,10 @@ import Vue from 'vue'
 import TabMenu from './TabMenu.vue'
 import upload from './upload.vue'
 import VueIntro from 'vue-introjs'
-import introJs from 'intro.js'
-Vue.use(introJs)
 Vue.use(VueIntro)
 Vue.component('TabMenu', TabMenu)
 Vue.component('upload', upload)
+import './introjs.css'
 export default {
   name: 'try',
   data () {
@@ -71,9 +70,10 @@ export default {
   },
   mounted: function() {
     console.log('start')
+    // introJs().start()
     // console.log($intro())
-    // this.$intro().start(); // start the guide
-    // this.$intro().showHints(); // show hints
+    this.$intro().start(); // start the guide
+    this.$intro().showHints(); // show hints
   },
   methods: {
     click: function () {
