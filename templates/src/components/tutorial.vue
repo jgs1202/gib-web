@@ -10,7 +10,7 @@
               <label for="fileid" class='square_btn'>
                 Choose file
                 <form name='form' class='fileup' style='display:none;'>
-                  <input type="file" name="file" id='fileid'>
+                  <input name="file" id='fileid'>
                 </form>
               </label>
               <br><br>
