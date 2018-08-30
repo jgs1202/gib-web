@@ -41,12 +41,7 @@
         </div>
       </el-main>
     </el-container>
-    </div>  
-    <!-- <div v-intro-autostart="true" v-intro-autostart.config="{ doneLabel: 'DONE!' }"></div>
-    <div v-intro="'The content of tooltip'" v-intro-step="1">aiueo</div>
-    <div v-intro="'The content of tooltip'" v-intro-step="2"></div>
-    <div v-intro="'The content of tooltip'" v-intro-step="3"></div>
-    <div v-intro="'The content of tooltip'" v-intro-step="4"></div> -->
+    </div>
   </div>
 </template>
 
@@ -73,13 +68,12 @@ export default {
   },
   mounted: function() {
     console.log('start')
-    // this.$intro().start(); // start the guide
-    // this.$intro().showHints(); // show hints
+    this.$intro().start(); // start the guide
+    this.$intro().showHints(); // show hints
   }
 }
 </script>
 
-<style src='./introjs.css'>
 </style>
 <style scoped>
 <style>
