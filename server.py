@@ -38,6 +38,7 @@ def face_info():
     if request.method == "POST":
         # stream = request.get_data()
         data = application(request.data)
+        print(type(data))
         if data == 'error':
             return 'error'
         else:
