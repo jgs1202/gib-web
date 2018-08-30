@@ -17,7 +17,7 @@
             <el-radio label="ST-GIB" border size='medium' class='layoutButton'></el-radio>
             <el-radio label="CD-GIB" border size='medium' class='layoutButton'></el-radio><br>
             <el-radio label="FD-GIB" border size='medium' class='layoutButton'></el-radio>
-            <el-radio label="TR-GiB" border size='medium' class='layoutButton'></el-radio>
+            <el-radio label="TR-GIB" border size='medium' class='layoutButton'></el-radio>
           </el-radio-group>
           <br><br><br>
         </span>
