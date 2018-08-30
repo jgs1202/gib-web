@@ -73,7 +73,7 @@ export default {
         svgWigth: 960,
         svgHeight: 600
       },
-      current: null,
+      current: null
     }
   },
   mounted: function() {

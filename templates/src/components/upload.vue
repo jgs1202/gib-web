@@ -101,7 +101,7 @@ export default {
     form.file.addEventListener('change', that.load, false)
     that.zoom = d3.zoom()
       .scaleExtent([1 / 2, 12])
-      .on("zoom", that.zoomed)
+      .on('zoom', that.zoomed)
     d3.select('svg').call(that.zoom)
     // d3.select('svg').call(downloadable.downloadable().filename('graph.png'))
   },
@@ -176,14 +176,14 @@ export default {
         data.layout = that.layout
         $.ajax({
           // url: 'http://35.200.124.149:80/upload',
-          url: 'http://0.0.0.0:80/upload',
+          url: 'http://127.0.0.1:5000/upload',
           type: 'POST',
           data: JSON.stringify(data),
           // dataType: 'json',
           // jsonpCallback: 'data',
           // dataType: 'text',
           contentType: 'application/json;charset=UTF-8',
-          timeout: 100000
+          timeout: 1000
         })
         .done(function(res) {
           that.message = null
