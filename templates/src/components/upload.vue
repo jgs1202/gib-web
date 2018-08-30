@@ -486,7 +486,8 @@ export default {
 }
 
 .svg-container {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   display: table;
   border: 0px solid #f8f8f8;
   /* box-shadow: 1px 2px 4px rgba(0, 0, 0, .5); */
