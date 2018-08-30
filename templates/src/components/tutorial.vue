@@ -74,7 +74,7 @@ export default {
   },
   mounted: function() {
     console.log('start')
-    this.$intro().start(); // start the guide
+    // this.$intro().start(); // start the guide
     // this.$intro().showHints(); // show hints
   }
 }
