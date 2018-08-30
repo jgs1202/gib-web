@@ -10,7 +10,7 @@ from flask_cors import CORS
 from py.layout import application
 # import ssl
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 api = Api(app)
 # context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
@@ -27,12 +27,12 @@ def after_request(response):
     return response
 
 
-@app.route("/")
-def index():
-    return render_template('index.html')
+# @app.route("/")
+# def index():
+#     return render_template('index.html')
 
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def face_info():
     print(request.method)
     if request.method == "POST":
