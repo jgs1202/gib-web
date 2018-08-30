@@ -42,12 +42,20 @@
       </el-main>
     </el-container>
     <br><br>
-    <!-- <label for="down_sample" class='square_btn' v-intro="'You can download a sample json file as a input. <br>Input data must follow this format.'" v-intro-step='5'>
+    <label for="down_sample" class='square_btn' v-intro="'You can download a sample json file as a input. <br>Input data must follow this format.'" v-intro-step='5'>
         <h3>Download Sample Data</h3>
       <form name='sampleData' class='sampleData' style='display:none;'>
         <input type="button" name="down_sample" id='down_sample' v-on:click='sampleData'>
       </form>
-    </label> -->
+    </label>
+    <span v-intro="'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'" v-intro-step="5" class='sampleData'>
+        <label for="down_sample" class='square_btn'>
+          Choose file
+          <form class='download_sample' style='display:none;'>
+            <input type="button" id='sample_data'>
+          </form>
+        </label>
+      </span>
     </div>
   </div>
 </template>
