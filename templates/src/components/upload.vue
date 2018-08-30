@@ -176,7 +176,7 @@ export default {
         data.layout = that.layout
         $.ajax({
           // url: 'http://35.200.124.149:80/upload',
-          url: 'http://127.0.0.1:5000/upload',
+          url: 'http://35.200.124.149/upload',
           type: 'POST',
           data: JSON.stringify(data),
           // dataType: 'json',
