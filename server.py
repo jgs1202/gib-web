@@ -32,7 +32,7 @@ def after_request(response):
 #     return render_template('index.html')
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def face_info():
     print(request.method)
     if request.method == "POST":
