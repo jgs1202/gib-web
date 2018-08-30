@@ -15,7 +15,7 @@ module.exports = {
       {test: /(\.css$)/, loaders: ['style-loader', 'css-loader']},
       {test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'file-loader'},
       {test: /\.js$/, loader: 'babel-loader', include: path.resolve(__dirname, 'node_modules', 'd3-downloadable')},
-      // {test: /\.js$/, loader: 'babel-loader', include: path.resolve(__dirname, 'node_modules', 'svg-dataurl')}
+      {test: /\.js$/, loader: 'babel-loader', include: path.resolve(__dirname, 'node_modules', 'svg-dataurl')}
     ]
   },
   resolve: {
