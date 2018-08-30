@@ -2,7 +2,7 @@
   <div>
     <TabMenu></TabMenu>
     <div>
-      <!-- <link rel="stylesheet" href="http://35.200.124.149/css/introjs.css"> -->
+      <link rel="stylesheet" href="http://35.200.124.149/css/introjs.css" crossorigin='anonymous'>
       <el-container class='bottom'>
       <el-aside width='20%'>
         <br><br>
@@ -56,9 +56,9 @@ import TabMenu from './TabMenu.vue'
 import upload from './upload.vue'
 import VueIntro from 'vue-introjs'
 Vue.use(VueIntro)
-import '../assets/introjs.css'
 Vue.component('TabMenu', TabMenu)
 Vue.component('upload', upload)
+const intro = require('intro.js')
 export default {
   name: 'try',
   data () {
@@ -80,6 +80,8 @@ export default {
 }
 </script>
 
+<style src='./introjs.css'>
+</style>
 <style scoped>
 <style>
 body {
