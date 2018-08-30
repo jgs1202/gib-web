@@ -51,10 +51,11 @@ import Vue from 'vue'
 import TabMenu from './TabMenu.vue'
 import upload from './upload.vue'
 import VueIntro from 'vue-introjs'
+import introJs from 'intro.js'
+Vue.use(introJs)
 Vue.use(VueIntro)
 Vue.component('TabMenu', TabMenu)
 Vue.component('upload', upload)
-const introJs = require('vue-introjs')
 export default {
   name: 'try',
   data () {
