@@ -138,8 +138,8 @@ export default {
             console.log(this.response)
             let json = JSON.stringify(this.response)
             console.log(json)
-            let blob = new Blob([this.response], {type: 'application/json'})
-            let url = URL.createObjectURL(blob)
+            let blob = new Blob([json], {type: 'application/json'})
+            let url = window.createObjectURL(blob)
             let a = document.createElement('a')
             a.download = 'sample_data.json'
             a.href = url
