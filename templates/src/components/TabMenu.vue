@@ -29,7 +29,6 @@ export default {
     }
   },
   mounted: function () {
-    console.log(this.$parenteNode)
   }
 }
 </script>

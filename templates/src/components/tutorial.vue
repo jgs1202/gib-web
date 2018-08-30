@@ -68,6 +68,7 @@ export default {
   },
   mounted: function() {
     console.log('start')
+    console.log($intro())
     this.$intro().start(); // start the guide
     this.$intro().showHints(); // show hints
   }
