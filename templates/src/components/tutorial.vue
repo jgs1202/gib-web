@@ -130,9 +130,7 @@ export default {
 }
 </script>
 
-</style>
 <style scoped>
-<style>
 body {
   margin: auto;
   margin-top: 10%;
