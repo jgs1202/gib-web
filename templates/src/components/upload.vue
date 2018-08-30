@@ -141,7 +141,7 @@ export default {
             let blob = new Blob([json], {type: 'application/json'})
             let url = window.URL.createObjectURL(blob)
             let a = document.createElement('a')
-            a.target = '_blank'
+            // a.target = '_blank'
             a.download = 'sample_data.json'
             // a.textContent = 'download sample_data.json'
             if (window.navigator.msSaveBlob) {
