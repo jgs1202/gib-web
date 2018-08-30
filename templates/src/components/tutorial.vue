@@ -263,4 +263,8 @@ body {
   margin-bottom: 5%;
   margin-top: 5%;
 }
+
+#sample_data {
+  padding: 4%;
+}
 </style>
