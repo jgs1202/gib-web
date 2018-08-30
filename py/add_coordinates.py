@@ -47,6 +47,6 @@ def add(file):
 
     else:
         for i in range(length):
-            data['nodes'][i]['cx'] = list[data['nodes'][i]['name']]['cx']
-            data['nodes'][i]['cy'] = list[data['nodes'][i]['name']]['cy']
+            data['nodes'][i]['cx'] = list[int(data['nodes'][i]['id'])]['cx']
+            data['nodes'][i]['cy'] = list[int(data['nodes'][i]['id'])]['cy']
         return data
