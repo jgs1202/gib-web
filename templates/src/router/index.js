@@ -26,7 +26,7 @@ export default new Router({
       component: real
     },
     {
-      path: '/',
+      path: '/contact',
       name: 'contact',
       component: contact
     }

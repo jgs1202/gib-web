@@ -9,8 +9,10 @@
 import Vue from 'vue'
 import TabMenu from './TabMenu.vue'
 import gibExample from './gib-example.vue'
+import contact from './contact.vue'
 Vue.component('TabMenu', TabMenu)
 Vue.component('gibExample', gibExample)
+Vue.component('contact', contact)
 export default {
   name: 'home',
   data () {
