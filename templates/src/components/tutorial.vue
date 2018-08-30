@@ -4,45 +4,45 @@
     <div>
       <!-- <link rel="stylesheet" href="http://35.200.124.149/css/introjs.css" crossorigin='anonymous'> -->
       <el-container class='bottom'>
-      <el-aside width='20%'>
-        <br><br>
-          <span v-intro="'Upload a file of graph. <br>The current file is shown here.'" v-intro-step="1" class='choose'>
-            <label for="fileid" class='square_btn'>
-              Choose file
-              <form name='form' class='fileup' style='display:none;'>
-                <input type="file" name="file" id='fileid'>
-              </form>
-            </label>
-            <br><br>
-            current file: {{current}}
-          </span><br><br>
-          <span v-intro="'Choose a proper layout.'" v-intro-step="2" class='buttons'>
-            <el-radio-group>
-              <el-radio label="ST-GIB" border size='medium' class='layoutButton'></el-radio>
-              <el-radio label="CD-GIB" border size='medium' class='layoutButton'></el-radio>
-            </el-radio-group>
-            <el-radio-group>
-              <el-radio label="FD-GIB" border size='medium' class='layoutButton'></el-radio>
-              <el-radio label="TR-GiB" border size='medium' class='layoutButton'></el-radio>
-            </el-radio-group>
-          </span><br><br>
-          <div v-intro="'Push and send me the file.'" v-intro-step="3" class='sendFile'>
-            <el-button id='send' type="success">Send file
-            </el-button><br>
-        </div>
-      </el-aside>
-      <el-main>
-        <div class="svg-container" :style="{width: settings.width + '%'}">
-          <svg id="svg" pointer-events="all" viewBox="0 0 960 600" preserveAspectRatio="xMinYMin meet" v-intro="'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'" v-intro-step="4">
-            <!-- <g id="nodes">{{nodes}}</g>
-            <g id="links">{{links}}</g>
-            <g id='boxes'>{{boxes}}</g> -->
-          </svg>
-        </div>
-      </el-main>
-    </el-container>
-    <br><br>
-    <span v-intro="'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'" v-intro-step="5" class='sampleData'>
+        <el-aside width='20%'>
+          <br><br>
+            <span v-intro="'Upload a file of graph. <br>The current file is shown here.'" v-intro-step="1" class='choose'>
+              <label for="fileid" class='square_btn'>
+                Choose file
+                <form name='form' class='fileup' style='display:none;'>
+                  <input type="file" name="file" id='fileid'>
+                </form>
+              </label>
+              <br><br>
+              current file: {{current}}
+            </span><br><br>
+            <span v-intro="'Choose a proper layout.'" v-intro-step="2" class='buttons'>
+              <el-radio-group>
+                <el-radio label="ST-GIB" border size='medium' class='layoutButton'></el-radio>
+                <el-radio label="CD-GIB" border size='medium' class='layoutButton'></el-radio>
+              </el-radio-group>
+              <el-radio-group>
+                <el-radio label="FD-GIB" border size='medium' class='layoutButton'></el-radio>
+                <el-radio label="TR-GiB" border size='medium' class='layoutButton'></el-radio>
+              </el-radio-group>
+            </span><br><br>
+            <div v-intro="'Push and send me the file.'" v-intro-step="3" class='sendFile'>
+              <el-button id='send' type="success">Send file
+              </el-button><br>
+          </div>
+        </el-aside>
+        <el-main>
+          <div class="svg-container" :style="{width: settings.width + '%'}">
+            <svg id="svg" pointer-events="all" viewBox="0 0 960 600" preserveAspectRatio="xMinYMin meet" v-intro="'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'" v-intro-step="4">
+              <!-- <g id="nodes">{{nodes}}</g>
+              <g id="links">{{links}}</g>
+              <g id='boxes'>{{boxes}}</g> -->
+            </svg>
+          </div>
+        </el-main>
+      </el-container>
+      <br><br>
+      <span v-intro="'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'" v-intro-step="5" class='sampleData'>
         <label for="down_sample" class='square_btn'>
           <h3>Download Sample Data</h3>
           <form class='download_sample' style='display:none;'>
