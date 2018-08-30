@@ -84,7 +84,7 @@ export default {
       selected: [],
       related: [],
       redLinks: [],
-      zoom: null,
+      zoom: null
     }
   },
   mounted: function () {
@@ -132,7 +132,8 @@ export default {
         data.data = that.graph
         data.layout = that.layout
         $.ajax({
-          url: 'http://127.0.0.1:5000/upload',
+          // url: 'http://35.200.124.149:80/upload',
+          url: 'http://0.0.0.0:5000/upload',
           type: 'POST',
           data: JSON.stringify(data),
           // dataType: 'json',
@@ -470,7 +471,7 @@ export default {
 	width: 45%;
 }
 
-.el-container {	
+.el-container {
   position: relative;
 }
 
@@ -483,6 +484,6 @@ export default {
   }
 
 .bottom {
-	padding-top: 3%; 
+	padding-top: 3%;
 }
 </style>
