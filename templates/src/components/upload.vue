@@ -132,7 +132,7 @@ export default {
         data.data = that.graph
         data.layout = that.layout
         $.ajax({
-          url: '127.0.0.1/upload',
+          url: 'http://127.0.0.1:5000/upload',
           type: 'POST',
           data: JSON.stringify(data),
           // dataType: 'json',
