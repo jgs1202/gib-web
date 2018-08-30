@@ -49,6 +49,7 @@ def add(file):
         for i in range(length):
             print(data['nodes'][i])
             print(list[int(data['nodes'][i]['id'])])
+            print(list)
             data['nodes'][i]['cx'] = list[int(data['nodes'][i]['id'])]['cx']
             data['nodes'][i]['cy'] = list[int(data['nodes'][i]['id'])]['cy']
         return data
