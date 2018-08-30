@@ -58,7 +58,6 @@ import VueIntro from 'vue-introjs'
 Vue.use(VueIntro)
 Vue.component('TabMenu', TabMenu)
 Vue.component('upload', upload)
-const intro = require('intro.js')
 export default {
   name: 'try',
   data () {
@@ -74,8 +73,8 @@ export default {
   },
   mounted: function() {
     console.log('start')
-    this.$intro().start(); // start the guide
-    this.$intro().showHints(); // show hints
+    // this.$intro().start(); // start the guide
+    // this.$intro().showHints(); // show hints
   }
 }
 </script>
