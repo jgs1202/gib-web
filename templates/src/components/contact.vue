@@ -2,7 +2,7 @@
   <div>
     <TabMenu></TabMenu>
     <br><br>
-    <h3>This site is provided by Koyamada lab. at <a href="https://www.kyoto-u.ac.jp/en/">Kyoto university</a>.</h3><br>
+    <h3>This site is provided by <a href="http://www.viz.media.kyoto-u.ac.jp/" target="_blank">Koyamada lab.</a> at <a href="https://www.kyoto-u.ac.jp/" target="_blank">Kyoto university</a>.</h3><br>
     <h3>Site owner : &nbsp; Nozomi Aoyama &nbsp; &nbsp; aoyama.nozomi.37x@st.kyoto-u.ac.jp</h3>
   </div>
 </template>
