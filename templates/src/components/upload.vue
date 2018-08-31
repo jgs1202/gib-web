@@ -163,7 +163,7 @@ export default {
           }
         }
       }
-      xmlHttpRequest.open( 'GET', 'http://35.200.124.149/image/sample_data.json', true);
+      xmlHttpRequest.open( 'GET', 'http://104.196.232.59/image/sample_data.json', true);
       xmlHttpRequest.responseType = 'json';
       xmlHttpRequest.send( null );
     },
@@ -176,8 +176,8 @@ export default {
         data.layout = that.layout
         console.log(typeof JSON.stringify(data))
         $.ajax({
-          // url: 'http://35.200.124.149:80/upload',
-          url: 'http://35.200.124.149/upload',
+          // url: 'http://104.196.232.59:80/upload',
+          url: 'http://104.196.232.59/upload',
           type: 'POST',
           data: JSON.stringify(data),
           // dataType: 'json',

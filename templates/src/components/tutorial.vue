@@ -2,7 +2,7 @@
   <div>
     <TabMenu></TabMenu>
     <div>
-      <!-- <link rel="stylesheet" href="http://35.200.124.149/css/introjs.css" crossorigin='anonymous'> -->
+      <!-- <link rel="stylesheet" href="http://104.196.232.59/css/introjs.css" crossorigin='anonymous'> -->
       <el-container class='bottom'>
         <el-aside width='20%'>
           <br><br>
@@ -123,7 +123,7 @@ export default {
           }
         }
       }
-      xmlHttpRequest.open( 'GET', 'http://35.200.124.149/image/sample_data.json', true);
+      xmlHttpRequest.open( 'GET', 'http://104.196.232.59/image/sample_data.json', true);
       xmlHttpRequest.responseType = 'json';
       xmlHttpRequest.send( null );
     }
