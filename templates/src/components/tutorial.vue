@@ -41,14 +41,14 @@
           </div>
         </el-main>
       </el-container>
-      <br><br>
-      <span v-intro="'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'" v-intro-step="5" class='sampleData'>
+      <span v-intro="'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'" v-intro-step="5" class='sampleData'><br><br>
         <label for="down_sample" class='square_btn'>
           <h3>Download Sample Data</h3>
           <form class='download_sample' style='display:none;'>
             <input type="button" id='sample_data'>
           </form>
         </label>
+        <br><br>
       </span>
     </div>
   </div>
