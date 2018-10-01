@@ -59,10 +59,10 @@ export default {
   methods: {
     downloadImage: function() {
       var that = this
-      that.stgib.src = 'http://104.196.232.59/image/stgib.png'
-      that.cdgib.src = 'http://104.196.232.59/image/cdgib.png'
-      that.fdgib.src = 'http://104.196.232.59/image/fdgib.png'
-      that.trgib.src = 'http://104.196.232.59/image/trgib.png'
+      that.stgib.src = 'http://35.233.171.147/image/stgib.png'
+      that.cdgib.src = 'http://35.233.171.147/image/cdgib.png'
+      that.fdgib.src = 'http://35.233.171.147/image/fdgib.png'
+      that.trgib.src = 'http://35.233.171.147/image/trgib.png'
     }
   }
 }
