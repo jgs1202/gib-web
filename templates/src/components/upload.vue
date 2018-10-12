@@ -60,7 +60,7 @@
 import $ from 'jquery'
 const swal = require('sweetalert')
 const d3 = require('d3')
-// const downloadable = require('d3-downloadable')
+const downloadable = require('d3-downloadable')
 export default {
   name: 'upload',
   data: function () {
@@ -103,7 +103,8 @@ export default {
       .scaleExtent([1 / 2, 12])
       .on('zoom', that.zoomed)
     d3.select('svg').call(that.zoom)
-    // d3.select('svg').call(downloadable.downloadable().filename('graph.png'))
+    d3.select('svg').call(downloadable.downloadable().filename('graph.png'))
+    console.log('downloadable')
   },
   methods: {
     zoomed: function() {
