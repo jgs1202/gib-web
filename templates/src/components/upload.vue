@@ -164,7 +164,7 @@ export default {
           }
         }
       }
-      xmlHttpRequest.open( 'GET', 'http://35.233.250.78/image/sample_data.json', true);
+      xmlHttpRequest.open( 'GET', 'http://35.233.171.147/image/sample_data.json', true);
       xmlHttpRequest.responseType = 'json';
       xmlHttpRequest.send( null );
     },
@@ -177,8 +177,8 @@ export default {
         data.layout = that.layout
         console.log(typeof JSON.stringify(data))
         $.ajax({
-          // url: 'http://35.233.250.78:80/upload',
-          url: 'http://35.233.250.78/upload',
+          // url: 'http://35.233.171.147:80/upload',
+          url: 'http://35.233.171.147/upload',
           type: 'POST',
           data: JSON.stringify(data),
           // dataType: 'json',

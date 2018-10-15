@@ -18784,7 +18784,7 @@ module.exports = { "default": __webpack_require__(271), __esModule: true };
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__ = __webpack_require__(144);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_16c693a6_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(643);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_edf192d4_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(643);
 function injectStyle (ssrContext) {
   __webpack_require__(275)
 }
@@ -18804,7 +18804,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_16c693a6_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_edf192d4_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -18987,7 +18987,7 @@ var downloadable = __webpack_require__(641);
           }
         }
       };
-      xmlHttpRequest.open('GET', 'http://35.233.250.78/image/sample_data.json', true);
+      xmlHttpRequest.open('GET', 'http://35.233.171.147/image/sample_data.json', true);
       xmlHttpRequest.responseType = 'json';
       xmlHttpRequest.send(null);
     },
@@ -19000,8 +19000,8 @@ var downloadable = __webpack_require__(641);
         data.layout = that.layout;
         console.log(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_helpers_typeof___default()(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_json_stringify___default()(data)));
         __WEBPACK_IMPORTED_MODULE_2_jquery___default.a.ajax({
-          // url: 'http://35.233.250.78:80/upload',
-          url: 'http://35.233.250.78/upload',
+          // url: 'http://35.233.171.147:80/upload',
+          url: 'http://35.233.171.147/upload',
           type: 'POST',
           data: __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_json_stringify___default()(data),
           // dataType: 'json',
@@ -40364,7 +40364,7 @@ var content = __webpack_require__(276);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("4b2df0f6", content, true, {});
+var update = __webpack_require__(17)("272b0b19", content, true, {});
 
 /***/ }),
 /* 276 */
