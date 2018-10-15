@@ -104,7 +104,6 @@ export default {
       .on('zoom', that.zoomed)
     d3.select('svg').call(that.zoom)
     d3.select('svg').call(downloadable.downloadable().filename('graph.png'))
-    console.log('downloadable')
   },
   methods: {
     zoomed: function() {
