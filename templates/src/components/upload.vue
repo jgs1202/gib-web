@@ -157,7 +157,7 @@ export default {
               document.body.removeChild(a);
             }
             else if (window.webkitURL && window.webkitURL.createObject) {
-              // for Chrome
+              // for Chrome 
               a.href = window.webkitURL.createObjectURL(blob);
               a.click();
             }

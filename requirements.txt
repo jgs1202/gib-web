@@ -6,3 +6,4 @@ sqlalchemy
 networkx
 squarify
 numpy
+pyomo
