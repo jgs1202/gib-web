@@ -18784,7 +18784,7 @@ module.exports = { "default": __webpack_require__(271), __esModule: true };
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__ = __webpack_require__(144);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_45786ef2_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(643);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d2e19b6e_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(643);
 function injectStyle (ssrContext) {
   __webpack_require__(275)
 }
@@ -18804,7 +18804,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_45786ef2_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d2e19b6e_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -18959,9 +18959,9 @@ var downloadable = __webpack_require__(641);
     sampleData: function sampleData() {
       var xmlHttpRequest = new XMLHttpRequest();
       xmlHttpRequest.onreadystatechange = function () {
-        xmlHttpRequest.setRequestHeader('Access-Control-Allow-Headers', '*');
-        xmlHttpRequest.setRequestHeader('Content-type', 'application/json');
-        xmlHttpRequest.setRequestHeader('Access-Control-Allow-Origin', '*');
+        // xmlHttpRequest.setRequestHeader('Access-Control-Allow-Headers', '*');
+        // xmlHttpRequest.setRequestHeader('Content-type', 'application/json');
+        // xmlHttpRequest.setRequestHeader('Access-Control-Allow-Origin', '*');
         if (this.readyState == 4 && this.status == 200) {
           if (this.response) {
             console.log(this.response);
@@ -40367,7 +40367,7 @@ var content = __webpack_require__(276);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("630885e2", content, true, {});
+var update = __webpack_require__(17)("5e793cda", content, true, {});
 
 /***/ }),
 /* 276 */
