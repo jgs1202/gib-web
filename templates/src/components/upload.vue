@@ -134,6 +134,9 @@ export default {
     sampleData: function() {
       var xmlHttpRequest = new XMLHttpRequest();
       xmlHttpRequest.onreadystatechange = function() {
+        xmlHttpRequest.setRequestHeader('Access-Control-Allow-Headers', '*');
+        xmlHttpRequest.setRequestHeader('Content-type', 'application/json');
+        xmlHttpRequest.setRequestHeader('Access-Control-Allow-Origin', '*');
         if( this.readyState == 4 && this.status == 200 ) {
           if( this.response ) {
             console.log(this.response)
