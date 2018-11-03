@@ -35,7 +35,8 @@ export default {
         json = graph
         var obj = json //{a: 123, b: "4 5 6"};
         var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
-        $('<a href="data:' + data + '" download="data.json">download JSON</a>').click()
+        $('<a href="data:' + data + '" download="data.json">download JSON</a>').appendTo('#container')
+        $('#container')[0].click()
       })
     }
   }
