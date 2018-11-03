@@ -35453,7 +35453,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["default"].component('upload', __WEBPACK_IMPOR
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_contact_vue__ = __webpack_require__(244);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_fa3d4b22_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_contact_vue__ = __webpack_require__(656);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_cfb4dff8_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_contact_vue__ = __webpack_require__(656);
 function injectStyle (ssrContext) {
   __webpack_require__(654)
 }
@@ -35468,12 +35468,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-fa3d4b22"
+var __vue_scopeId__ = "data-v-cfb4dff8"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_contact_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_fa3d4b22_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_contact_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_cfb4dff8_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_contact_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -35532,7 +35532,7 @@ var d3 = __webpack_require__(93);
         json = graph;
         var obj = json; //{a: 123, b: "4 5 6"};
         var data = "text/json;charset=utf-8," + encodeURIComponent(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_json_stringify___default()(obj));
-        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('<a href="data:' + data + '" download="data.json">download JSON</a>').appendTo('#container');
+        __WEBPACK_IMPORTED_MODULE_3_jquery___default()('<a href="data:' + data + '" download="data.json">download JSON</a>').click();
       });
     }
   }
@@ -58439,7 +58439,7 @@ var content = __webpack_require__(655);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("205411fb", content, true, {});
+var update = __webpack_require__(17)("27c8338a", content, true, {});
 
 /***/ }),
 /* 655 */
