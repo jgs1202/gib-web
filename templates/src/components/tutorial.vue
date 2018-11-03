@@ -43,9 +43,9 @@
       </el-container>
       <span v-intro="'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'" v-intro-step="5" class='sampleData'><br><br>
         <label for="down_sample" class='square_btn'>
-          <h3>Download Sample Data</h3>
+          <h3 v-on:click='sampleData'>Download Sample Data</h3>
           <form class='download_sample' style='display:none;'>
-            <input type="button" id='sample_data' v-on:click='sampleData'>
+            <input type="button" id='sample_data'>
           </form>
         </label>
         <br><br>
@@ -59,6 +59,8 @@ import Vue from 'vue'
 import TabMenu from './TabMenu.vue'
 import upload from './upload.vue'
 import VueIntro from 'vue-introjs'
+import $ from 'jquery'
+const d3 = require('d3')
 Vue.use(VueIntro)
 Vue.component('TabMenu', TabMenu)
 Vue.component('upload', upload)
@@ -77,20 +79,14 @@ export default {
     }
   },
   mounted: function() {
-    console.log('start')
+    var that = this
     // introJs().start()
     // console.log($intro())
     this.$intro().start(); // start the guide
     this.$intro().showHints(); // show hints
   },
   methods: {
-    click: function () {
-      // console.log($intro())
-    this.$intro().start(); // start the guide
-    this.$intro().showHints(); // show hints
-    }
-  },
-    sampleData: function() {
+    sampleData: function(e) {
       d3.json('../image/sample_data.json').then(function(graph){
         let json = JSON.stringify(graph, null, '\t')
             console.log(json)
@@ -118,6 +114,7 @@ export default {
             }
       })
     }
+  }
 }
 </script>
 
