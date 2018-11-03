@@ -124,10 +124,10 @@ export default {
         swal('Only a json file is valid.')
       } else {
         let reader = new FileReader()
-        reader.readAsText(result)
         reader.addEventListener('load', function () {
           that.graph = JSON.parse(reader.result)
         }, false)
+        reader.readAsText(result)
       }
       that.current = result.name
     },
@@ -161,6 +161,7 @@ export default {
     },
     sendData: function (e) {
       let that = this
+      console.log((that.graph))
       if (that.graph) {
         that.status = 'calculating...'
         let data = {}
@@ -194,7 +195,7 @@ export default {
         })
         .fail(function(XMLHttpRequest, textStatus, errorThrown) {
           that.status = 'Send File'
-          // swal('An error occurred! Please send us a message from the contact.')
+          swal('An error occurred! Please send us a message from the contact.')
         })
       }
     },
