@@ -4,8 +4,6 @@
     <br><br>
     <h3>This site is provided by <a href="http://www.viz.media.kyoto-u.ac.jp/" target="_blank">Koyamada lab.</a> at <a href="https://www.kyoto-u.ac.jp/" target="_blank">Kyoto university</a>.</h3><br>
     <h3>Site owner : &nbsp; Nozomi Aoyama &nbsp; &nbsp; aoyama.nozomi.37x@st.kyoto-u.ac.jp</h3>
-    <button v-on:click="download">Say Hi</button>
-    <div id="container"></div>
   </div>
 </template>
 
@@ -29,35 +27,6 @@ export default {
   methods: {
     click: function () {
     },
-    download: function(e){
-      let json = null
-      d3.json('../image/sample_data.json').then(function(graph){
-        let json = JSON.stringify(graph, null, '\t')
-            console.log(json)
-            let blob = new Blob([json], {type: 'application/json'})
-            let url = window.URL.createObjectURL(blob)
-            let a = document.createElement('a')
-            // a.target = '_blank'
-            a.download = 'sample_data.json'
-            // a.textContent = 'download sample_data.json'
-            if (window.navigator.msSaveBlob) {
-              // for IE
-              window.navigator.msSaveBlob(blob, name)
-            }
-            else if (window.URL && window.URL.createObjectURL) {
-              // for Firefox
-              a.href = window.URL.createObjectURL(blob);
-              document.body.appendChild(a);
-              a.click();
-              document.body.removeChild(a);
-            }
-            else if (window.webkitURL && window.webkitURL.createObject) {
-              // for Chrome 
-              a.href = window.webkitURL.createObjectURL(blob);
-              a.click();
-            }
-      })
-    }
   }
 }
 </script>
