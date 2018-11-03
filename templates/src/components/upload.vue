@@ -193,8 +193,8 @@ export default {
           }
         })
         .fail(function(XMLHttpRequest, textStatus, errorThrown) {
-          console.log(textStatus)
           that.status = 'Send File'
+          swal('An error occurred! Please send us a message from the contact.')
         })
       }
     },
