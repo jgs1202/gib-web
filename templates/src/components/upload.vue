@@ -102,8 +102,8 @@ export default {
     that.zoom = d3.zoom()
       .scaleExtent([1 / 2, 12])
       .on('zoom', that.zoomed)
-    // d3.select('svg').call(that.zoom)
-    // d3.select('svg').call(downloadable.downloadable().filename('graph.png'))
+    d3.select('svg').call(that.zoom)
+    d3.select('svg').call(downloadable.downloadable().filename('graph.png'))
     console.log('downloadable')
   },
   methods: {
@@ -169,7 +169,7 @@ export default {
       }
       xmlHttpRequest.open( 'GET', 'http://35.233.171.147/image/sample_data.json', true);
       xmlHttpRequest.responseType = 'json';
-      xmlHttpRequest.send( null );
+    xmlHttpRequest.send( null );
     },
     sendData: function (e) {
       let that = this
