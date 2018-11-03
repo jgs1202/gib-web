@@ -91,12 +91,8 @@ export default {
     }
   },
     sampleData: function() {
-      var xmlHttpRequest = new XMLHttpRequest();
-      xmlHttpRequest.onreadystatechange = function() {
-        if( this.readyState == 4 && this.status == 200 ) {
-          if( this.response ) {
-            console.log(this.response)
-            let json = JSON.stringify(this.response, null, '\t')
+      d3.json('../image/sample_data.json').then(function(graph){
+        let json = JSON.stringify(graph, null, '\t')
             console.log(json)
             let blob = new Blob([json], {type: 'application/json'})
             let url = window.URL.createObjectURL(blob)
@@ -116,16 +112,11 @@ export default {
               document.body.removeChild(a);
             }
             else if (window.webkitURL && window.webkitURL.createObject) {
-              // for Chrome
+              // for Chrome 
               a.href = window.webkitURL.createObjectURL(blob);
               a.click();
             }
-          }
-        }
-      }
-      xmlHttpRequest.open( 'GET', 'http://35.233.171.147/image/sample_data.json', true);
-      xmlHttpRequest.responseType = 'json';
-      xmlHttpRequest.send( null );
+      })
     }
 }
 </script>
