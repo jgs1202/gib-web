@@ -35453,7 +35453,7 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["default"].component('upload', __WEBPACK_IMPOR
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_contact_vue__ = __webpack_require__(244);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_26829d13_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_contact_vue__ = __webpack_require__(656);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_738eac17_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_contact_vue__ = __webpack_require__(656);
 function injectStyle (ssrContext) {
   __webpack_require__(654)
 }
@@ -35468,12 +35468,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-26829d13"
+var __vue_scopeId__ = "data-v-738eac17"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_contact_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_26829d13_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_contact_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_738eac17_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_contact_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -35566,8 +35566,8 @@ var d3 = __webpack_require__(92);
       // xmlHttpRequest.responseType = 'json';
       // xmlHttpRequest.send( null );
 
-      d3.json('../image/sample_data.json', function (error, root) {
-        console.log(error, root);
+      d3.json('../image/sample_data.json').then(function (graph) {
+        console.log(graph);
       });
 
       // var obj = json //{a: 123, b: "4 5 6"};
@@ -58479,7 +58479,7 @@ var content = __webpack_require__(655);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("1895262c", content, true, {});
+var update = __webpack_require__(17)("58b2cfdc", content, true, {});
 
 /***/ }),
 /* 655 */

@@ -72,8 +72,8 @@ export default {
       // xmlHttpRequest.responseType = 'json';
       // xmlHttpRequest.send( null );
 
-      d3.json('../image/sample_data.json', function(error, root){
-        console.log(error, root)
+      d3.json('../image/sample_data.json').then(function(graph){
+        console.log(graph)
       })
 
 
