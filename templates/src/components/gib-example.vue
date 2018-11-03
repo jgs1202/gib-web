@@ -1,6 +1,6 @@
 <template>
   <div id="4layouts">
-    <p class='explain'>You can EASILY access 4 GIB layous.</p>
+    <p class='explain'>You can EASILY access 4 GIB layouts.</p>
     <ol class='images'>
       <li>
         <img id='stgib'>

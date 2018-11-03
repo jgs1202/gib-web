@@ -58510,7 +58510,7 @@ exports.push([module.i, "li[data-v-fbf88108]{margin-left:auto}a[data-v-fbf88108]
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_gib_example_vue__ = __webpack_require__(246);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_311e99cc_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_gib_example_vue__ = __webpack_require__(663);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1bf0a69c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_gib_example_vue__ = __webpack_require__(663);
 function injectStyle (ssrContext) {
   __webpack_require__(661)
 }
@@ -58525,12 +58525,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-311e99cc"
+var __vue_scopeId__ = "data-v-1bf0a69c"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_gib_example_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_311e99cc_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_gib_example_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1bf0a69c_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_gib_example_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -58551,7 +58551,7 @@ var content = __webpack_require__(662);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("289750d3", content, true, {});
+var update = __webpack_require__(17)("41db1a3b", content, true, {});
 
 /***/ }),
 /* 662 */
@@ -58562,7 +58562,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "ol[data-v-311e99cc]{margin:auto;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:0;list-style:none}li[data-v-311e99cc]{margin-left:2%;margin-right:2%;width:100%}.images img[data-v-311e99cc]{width:100%;padding-bottom:3%}.logos[data-v-311e99cc]{padding-bottom:4%}p.explain[data-v-311e99cc]{font-size:2.5vw;padding-bottom:2%}@media screen and (min-width:1000px){p.explain[data-v-311e99cc]{font-size:30px}}", ""]);
+exports.push([module.i, "ol[data-v-1bf0a69c]{margin:auto;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:0;list-style:none}li[data-v-1bf0a69c]{margin-left:2%;margin-right:2%;width:100%}.images img[data-v-1bf0a69c]{width:100%;padding-bottom:3%}.logos[data-v-1bf0a69c]{padding-bottom:4%}p.explain[data-v-1bf0a69c]{font-size:2.5vw;padding-bottom:2%}@media screen and (min-width:1000px){p.explain[data-v-1bf0a69c]{font-size:30px}}", ""]);
 
 // exports
 
@@ -58573,7 +58573,7 @@ exports.push([module.i, "ol[data-v-311e99cc]{margin:auto;width:100%;display:-web
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _vm._m(0)}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"4layouts"}},[_c('p',{staticClass:"explain"},[_vm._v("You can EASILY access 4 GIB layous.")]),_vm._v(" "),_c('ol',{staticClass:"images"},[_c('li',[_c('img',{attrs:{"id":"stgib"}})]),_vm._v(" "),_c('li',[_c('img',{attrs:{"id":"cdgib"}})])]),_vm._v(" "),_c('ol',{staticClass:"logos"},[_c('li',[_vm._v("\n      ST-GIB     Size is easy to see\n    ")]),_vm._v(" "),_c('li',[_vm._v("\n      CD-GIB     Inter-connection are considered\n    ")])]),_vm._v(" "),_c('ol',{staticClass:"images"},[_c('li',[_c('img',{attrs:{"id":"fdgib"}})]),_vm._v(" "),_c('li',[_c('img',{attrs:{"id":"trgib"}})])]),_vm._v(" "),_c('ol',{staticClass:"logos"},[_c('li',[_vm._v("\n      FD-GIB     Using force-directed layout\n    ")]),_vm._v(" "),_c('li',[_vm._v("\n      TR-GIB     Optimized the link distance\n    ")])])])}]
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"4layouts"}},[_c('p',{staticClass:"explain"},[_vm._v("You can EASILY access 4 GIB layouts.")]),_vm._v(" "),_c('ol',{staticClass:"images"},[_c('li',[_c('img',{attrs:{"id":"stgib"}})]),_vm._v(" "),_c('li',[_c('img',{attrs:{"id":"cdgib"}})])]),_vm._v(" "),_c('ol',{staticClass:"logos"},[_c('li',[_vm._v("\n      ST-GIB     Size is easy to see\n    ")]),_vm._v(" "),_c('li',[_vm._v("\n      CD-GIB     Inter-connection are considered\n    ")])]),_vm._v(" "),_c('ol',{staticClass:"images"},[_c('li',[_c('img',{attrs:{"id":"fdgib"}})]),_vm._v(" "),_c('li',[_c('img',{attrs:{"id":"trgib"}})])]),_vm._v(" "),_c('ol',{staticClass:"logos"},[_c('li',[_vm._v("\n      FD-GIB     Using force-directed layout\n    ")]),_vm._v(" "),_c('li',[_vm._v("\n      TR-GIB     Optimized the link distance\n    ")])])])}]
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
 
