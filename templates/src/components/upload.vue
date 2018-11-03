@@ -104,7 +104,7 @@ export default {
       .on('zoom', that.zoomed)
     d3.select('svg').call(that.zoom)
     d3.select('svg').call(downloadable.downloadable().filename('graph.png'))
-    console.log('downloadable')
+    // console.log('downloadable')
   },
   methods: {
     zoomed: function() {
@@ -161,13 +161,13 @@ export default {
     },
     sendData: function (e) {
       let that = this
-      console.log((that.graph))
+      // console.log((that.graph))
       if (that.graph) {
         that.status = 'calculating...'
         let data = {}
         data.data = that.graph
         data.layout = that.layout
-        console.log(typeof JSON.stringify(data))
+        // console.log(typeof JSON.stringify(data))
         $.ajax({
           // url: 'http://35.233.171.147:80/upload',
           url: 'http://35.233.171.147/upload',
@@ -238,7 +238,7 @@ export default {
               }
             })
             selection.on('click', function(d, i){
-              console.log('click')
+              // console.log('click')
               that.selectNode(d, i)
             })
             selection.on('mouseout', function(d, i){
@@ -330,7 +330,7 @@ export default {
             relLinks.push(that.gib.links[i])
           }
         }
-        console.log(relLinks)
+        // console.log(relLinks)
         for (let n=0; n < relLinks.length; n++){
           if (relLinks[n].source === d.name){
             relNodes.push(relLinks[n].target)
