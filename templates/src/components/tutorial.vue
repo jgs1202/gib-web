@@ -45,7 +45,7 @@
         <label for="down_sample" class='square_btn'>
           <h3>Download Sample Data</h3>
           <form class='download_sample' style='display:none;'>
-            <input type="button" id='sample_data'>
+            <input type="button" id='sample_data' v-on:click='sampleData'>
           </form>
         </label>
         <br><br>

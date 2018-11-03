@@ -134,7 +134,7 @@ export default {
     sampleData: function() {
       d3.json('../image/sample_data.json').then(function(graph){
         let json = JSON.stringify(graph, null, '\t')
-            console.log(json)
+            // console.log(json)
             let blob = new Blob([json], {type: 'application/json'})
             let url = window.URL.createObjectURL(blob)
             let a = document.createElement('a')

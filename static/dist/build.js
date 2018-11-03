@@ -29694,7 +29694,7 @@ module.exports = { "default": __webpack_require__(271), __esModule: true };
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__ = __webpack_require__(146);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4bd5e668_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(643);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c33098_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(643);
 function injectStyle (ssrContext) {
   __webpack_require__(275)
 }
@@ -29714,7 +29714,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4bd5e668_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c33098_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -29869,7 +29869,7 @@ var downloadable = __webpack_require__(641);
     sampleData: function sampleData() {
       d3.json('../image/sample_data.json').then(function (graph) {
         var json = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_core_js_json_stringify___default()(graph, null, '\t');
-        console.log(json);
+        // console.log(json)
         var blob = new Blob([json], { type: 'application/json' });
         var url = window.URL.createObjectURL(blob);
         var a = document.createElement('a');
@@ -40235,7 +40235,7 @@ if (inBrowser && window.Vue) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tutorial_vue__ = __webpack_require__(142);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1f5400b9_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tutorial_vue__ = __webpack_require__(649);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d7eddac4_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tutorial_vue__ = __webpack_require__(649);
 function injectStyle (ssrContext) {
   __webpack_require__(269)
 }
@@ -40250,12 +40250,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-1f5400b9"
+var __vue_scopeId__ = "data-v-d7eddac4"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_tutorial_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1f5400b9_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tutorial_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_d7eddac4_hasScoped_true_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_tutorial_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -40276,7 +40276,7 @@ var content = __webpack_require__(270);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("abe4bb60", content, true, {});
+var update = __webpack_require__(17)("05272f25", content, true, {});
 
 /***/ }),
 /* 270 */
@@ -40287,7 +40287,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "body[data-v-1f5400b9]{margin:auto;margin-top:10%;width:100%;height:100%;font-family:Century Gothic}.app[data-v-1f5400b9]{margin:auto;width:95%;height:95%}.controls[data-v-1f5400b9]{text-align:center;width:80%;margin:auto;padding-bottom:2rem;margin-top:2rem;background:#f8f8f8;padding:.5rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.sync[data-v-1f5400b9]{background:#000;height:60px;width:60px;position:absolute;right:0;bottom:0}.text[data-v-1f5400b9]{width:80%;margin:auto;text-align:center;margin-top:20%;font-size:1.3rem}.el-aside[data-v-1f5400b9],.el-main[data-v-1f5400b9]{-webkit-box-shadow:1px 2px 4px rgba(0,0,0,.5);box-shadow:1px 2px 4px rgba(0,0,0,.5);text-align:center}.svg-container[data-v-1f5400b9]{margin:auto;display:table;border:0 solid #f8f8f8}.controls>*+[data-v-1f5400b9]{margin-top:1rem}.links line[data-v-1f5400b9]{stroke:#999;stroke-opacity:1}.square_btn[data-v-1f5400b9]{position:relative;display:inline-block;padding:.25em .5em;text-decoration:none;color:#fff;background:skyblue;border-radius:4px;-webkit-box-shadow:inset 0 2px 0 hsla(0,0%,100%,.2),0 2px 2px rgba(0,0,0,.19);box-shadow:inset 0 2px 0 hsla(0,0%,100%,.2),0 2px 2px rgba(0,0,0,.19)}.square_btn[data-v-1f5400b9]:active{opacity:.6;-webkit-box-shadow:0 0 2px rgba(0,0,0,.3);box-shadow:0 0 2px rgba(0,0,0,.3)}.layoutButton[data-v-1f5400b9]{width:45%}.el-container[data-v-1f5400b9]{position:relative}.el-footer[data-v-1f5400b9],.el-header[data-v-1f5400b9]{color:#333;text-align:center;line-height:60px;height:30%}.bottom[data-v-1f5400b9]{padding-top:3%}.buttons[data-v-1f5400b9],.choose[data-v-1f5400b9],.sendFile[data-v-1f5400b9]{padding-bottom:5%;padding-top:5%;margin-bottom:5%;margin-top:5%}#sample_data[data-v-1f5400b9]{padding:4%}", ""]);
+exports.push([module.i, "body[data-v-d7eddac4]{margin:auto;margin-top:10%;width:100%;height:100%;font-family:Century Gothic}.app[data-v-d7eddac4]{margin:auto;width:95%;height:95%}.controls[data-v-d7eddac4]{text-align:center;width:80%;margin:auto;padding-bottom:2rem;margin-top:2rem;background:#f8f8f8;padding:.5rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.sync[data-v-d7eddac4]{background:#000;height:60px;width:60px;position:absolute;right:0;bottom:0}.text[data-v-d7eddac4]{width:80%;margin:auto;text-align:center;margin-top:20%;font-size:1.3rem}.el-aside[data-v-d7eddac4],.el-main[data-v-d7eddac4]{-webkit-box-shadow:1px 2px 4px rgba(0,0,0,.5);box-shadow:1px 2px 4px rgba(0,0,0,.5);text-align:center}.svg-container[data-v-d7eddac4]{margin:auto;display:table;border:0 solid #f8f8f8}.controls>*+[data-v-d7eddac4]{margin-top:1rem}.links line[data-v-d7eddac4]{stroke:#999;stroke-opacity:1}.square_btn[data-v-d7eddac4]{position:relative;display:inline-block;padding:.25em .5em;text-decoration:none;color:#fff;background:skyblue;border-radius:4px;-webkit-box-shadow:inset 0 2px 0 hsla(0,0%,100%,.2),0 2px 2px rgba(0,0,0,.19);box-shadow:inset 0 2px 0 hsla(0,0%,100%,.2),0 2px 2px rgba(0,0,0,.19)}.square_btn[data-v-d7eddac4]:active{opacity:.6;-webkit-box-shadow:0 0 2px rgba(0,0,0,.3);box-shadow:0 0 2px rgba(0,0,0,.3)}.layoutButton[data-v-d7eddac4]{width:45%}.el-container[data-v-d7eddac4]{position:relative}.el-footer[data-v-d7eddac4],.el-header[data-v-d7eddac4]{color:#333;text-align:center;line-height:60px;height:30%}.bottom[data-v-d7eddac4]{padding-top:3%}.buttons[data-v-d7eddac4],.choose[data-v-d7eddac4],.sendFile[data-v-d7eddac4]{padding-bottom:5%;padding-top:5%;margin-bottom:5%;margin-top:5%}#sample_data[data-v-d7eddac4]{padding:4%}", ""]);
 
 // exports
 
@@ -40351,7 +40351,7 @@ var content = __webpack_require__(276);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("3144bbcc", content, true, {});
+var update = __webpack_require__(17)("174c2748", content, true, {});
 
 /***/ }),
 /* 276 */
@@ -58314,8 +58314,8 @@ module.exports = function (css) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('TabMenu'),_vm._v(" "),_c('div',[_c('el-container',{staticClass:"bottom"},[_c('el-aside',{attrs:{"width":"20%"}},[_c('br'),_c('br'),_vm._v(" "),_c('span',{directives:[{name:"intro",rawName:"v-intro",value:('Upload a file of graph. <br>The current file is shown here.'),expression:"'Upload a file of graph. <br>The current file is shown here.'"},{name:"intro-step",rawName:"v-intro-step",value:(1),expression:"1"}],staticClass:"choose"},[_c('label',{staticClass:"square_btn",attrs:{"for":"fileid"}},[_vm._v("\n              Choose file\n              "),_c('form',{staticClass:"fileup",staticStyle:{"display":"none"},attrs:{"name":"form"}},[_c('input',{attrs:{"name":"file","id":"fileid"}})])]),_vm._v(" "),_c('br'),_c('br'),_vm._v("\n            current file: "+_vm._s(_vm.current)+"\n          ")]),_c('br'),_c('br'),_vm._v(" "),_c('span',{directives:[{name:"intro",rawName:"v-intro",value:('Choose a proper layout.'),expression:"'Choose a proper layout.'"},{name:"intro-step",rawName:"v-intro-step",value:(2),expression:"2"}],staticClass:"buttons"},[_c('el-radio-group',[_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"ST-GIB","border":"","size":"medium"}}),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"CD-GIB","border":"","size":"medium"}})],1),_vm._v(" "),_c('el-radio-group',[_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"FD-GIB","border":"","size":"medium"}}),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"TR-GiB","border":"","size":"medium"}})],1)],1),_c('br'),_c('br'),_vm._v(" "),_c('div',{directives:[{name:"intro",rawName:"v-intro",value:('Push and send me the file.'),expression:"'Push and send me the file.'"},{name:"intro-step",rawName:"v-intro-step",value:(3),expression:"3"}],staticClass:"sendFile"},[_c('el-button',{attrs:{"id":"send","type":"success"}},[_vm._v("Send file\n            ")]),_c('br')],1)]),_vm._v(" "),_c('el-main',[_c('div',{staticClass:"svg-container",style:({width: _vm.settings.width + '%'})},[_c('svg',{directives:[{name:"intro",rawName:"v-intro",value:('The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'),expression:"'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'"},{name:"intro-step",rawName:"v-intro-step",value:(4),expression:"4"}],attrs:{"id":"svg","pointer-events":"all","viewBox":"0 0 960 600","preserveAspectRatio":"xMinYMin meet"}})])])],1),_vm._v(" "),_c('span',{directives:[{name:"intro",rawName:"v-intro",value:('The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'),expression:"'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'"},{name:"intro-step",rawName:"v-intro-step",value:(5),expression:"5"}],staticClass:"sampleData"},[_c('br'),_c('br'),_vm._v(" "),_vm._m(0),_vm._v(" "),_c('br'),_c('br')])],1)],1)}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{staticClass:"square_btn",attrs:{"for":"down_sample"}},[_c('h3',[_vm._v("Download Sample Data")]),_vm._v(" "),_c('form',{staticClass:"download_sample",staticStyle:{"display":"none"}},[_c('input',{attrs:{"type":"button","id":"sample_data"}})])])}]
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('TabMenu'),_vm._v(" "),_c('div',[_c('el-container',{staticClass:"bottom"},[_c('el-aside',{attrs:{"width":"20%"}},[_c('br'),_c('br'),_vm._v(" "),_c('span',{directives:[{name:"intro",rawName:"v-intro",value:('Upload a file of graph. <br>The current file is shown here.'),expression:"'Upload a file of graph. <br>The current file is shown here.'"},{name:"intro-step",rawName:"v-intro-step",value:(1),expression:"1"}],staticClass:"choose"},[_c('label',{staticClass:"square_btn",attrs:{"for":"fileid"}},[_vm._v("\n              Choose file\n              "),_c('form',{staticClass:"fileup",staticStyle:{"display":"none"},attrs:{"name":"form"}},[_c('input',{attrs:{"name":"file","id":"fileid"}})])]),_vm._v(" "),_c('br'),_c('br'),_vm._v("\n            current file: "+_vm._s(_vm.current)+"\n          ")]),_c('br'),_c('br'),_vm._v(" "),_c('span',{directives:[{name:"intro",rawName:"v-intro",value:('Choose a proper layout.'),expression:"'Choose a proper layout.'"},{name:"intro-step",rawName:"v-intro-step",value:(2),expression:"2"}],staticClass:"buttons"},[_c('el-radio-group',[_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"ST-GIB","border":"","size":"medium"}}),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"CD-GIB","border":"","size":"medium"}})],1),_vm._v(" "),_c('el-radio-group',[_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"FD-GIB","border":"","size":"medium"}}),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"TR-GiB","border":"","size":"medium"}})],1)],1),_c('br'),_c('br'),_vm._v(" "),_c('div',{directives:[{name:"intro",rawName:"v-intro",value:('Push and send me the file.'),expression:"'Push and send me the file.'"},{name:"intro-step",rawName:"v-intro-step",value:(3),expression:"3"}],staticClass:"sendFile"},[_c('el-button',{attrs:{"id":"send","type":"success"}},[_vm._v("Send file\n            ")]),_c('br')],1)]),_vm._v(" "),_c('el-main',[_c('div',{staticClass:"svg-container",style:({width: _vm.settings.width + '%'})},[_c('svg',{directives:[{name:"intro",rawName:"v-intro",value:('The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'),expression:"'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'"},{name:"intro-step",rawName:"v-intro-step",value:(4),expression:"4"}],attrs:{"id":"svg","pointer-events":"all","viewBox":"0 0 960 600","preserveAspectRatio":"xMinYMin meet"}})])])],1),_vm._v(" "),_c('span',{directives:[{name:"intro",rawName:"v-intro",value:('The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'),expression:"'The graph is shown here. <br>You can download the graph by right click.<br>You can analyze the data by click.'"},{name:"intro-step",rawName:"v-intro-step",value:(5),expression:"5"}],staticClass:"sampleData"},[_c('br'),_c('br'),_vm._v(" "),_c('label',{staticClass:"square_btn",attrs:{"for":"down_sample"}},[_c('h3',[_vm._v("Download Sample Data")]),_vm._v(" "),_c('form',{staticClass:"download_sample",staticStyle:{"display":"none"}},[_c('input',{attrs:{"type":"button","id":"sample_data"},on:{"click":_vm.sampleData}})])]),_vm._v(" "),_c('br'),_c('br')])],1)],1)}
+var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
 
