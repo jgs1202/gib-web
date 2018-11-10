@@ -11,7 +11,7 @@
         </label>
         <br><br>
         current file: {{current}}
-        <br><br><br>
+        <br><br>
         <span>
           <el-radio-group v-model="layout">
             <el-radio label="ST-GIB" border size='medium' class='layoutButton'></el-radio>
@@ -19,18 +19,19 @@
             <el-radio label="FD-GIB" border size='medium' class='layoutButton'></el-radio>
             <el-radio label="TR-GIB" border size='medium' class='layoutButton'></el-radio>
           </el-radio-group>
-          <br><br><br>
+          <br><br>
         </span>
         <div>
           <el-button id='send' type="success" v-on:click='sendData'>{{status}}
           </el-button><br>
           {{message}}
         </div>
-        <div><br><br>
+        <div><br>
           Current Node data:<br><br>
           Name &nbsp;: {{nodeData.name}}<br>
-          Group : {{nodeData.group}}<br><br>
-        </div>
+          Group : {{nodeData.group}}<br>
+        </div><br>
+        <br><br>
         <label for="reset" class='square_btn'>
           Reset zoom
           <input type="button" name="reset" id='reset' style='display:none' v-on:click='resetted'>
@@ -53,6 +54,10 @@
         <input type="button" name="down_sample" id='down_sample' v-on:click='sampleData'>
       </form>
     </label>
+    <label for="json_file" class='square_btn' style="margin-left: 5rem">
+          <h3>Download json file</h3>
+          <input type="button" name="json_file" id='json_file' style='display:none' v-on:click='get_json'>
+        </label>
   </div>
 </template>
 
@@ -158,6 +163,33 @@ export default {
               a.click();
             }
       })
+    },
+    get_json: function() {
+      let that = this
+      let json = JSON.stringify(that.gib, null, '\t')
+          // console.log(json)
+          let blob = new Blob([json], {type: 'application/json'})
+          let url = window.URL.createObjectURL(blob)
+          let a = document.createElement('a')
+          // a.target = '_blank'
+          a.download = 'gib.json'
+          // a.textContent = 'download sample_data.json'
+          if (window.navigator.msSaveBlob) {
+            // for IE
+            window.navigator.msSaveBlob(blob, name)
+          }
+          else if (window.URL && window.URL.createObjectURL) {
+            // for Firefox
+            a.href = window.URL.createObjectURL(blob);
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          }
+          else if (window.webkitURL && window.webkitURL.createObject) {
+            // for Chrome 
+            a.href = window.webkitURL.createObjectURL(blob);
+            a.click();
+          }
     },
     sendData: function (e) {
       let that = this
