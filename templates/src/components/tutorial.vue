@@ -48,6 +48,12 @@
             <input type="button" id='sample_data'>
           </form>
         </label>
+        <span v-intro="'You can download the current coordinate of boxes and nodes by clicking here.'">
+          <label for="json_file" class='square_btn' style="margin-left: 5rem">
+            <h3>Download json file</h3>
+            <input type="button" name="json_file" id='json_file' style='display:none' v-on:click='get_json'>
+          </label>
+        </span>
         <br><br>
       </span>
     </div>
@@ -94,7 +100,7 @@ export default {
             let url = window.URL.createObjectURL(blob)
             let a = document.createElement('a')
             // a.target = '_blank'
-            a.download = 'sample_data.json'
+            a.download = 'sample_json'
             // a.textContent = 'download sample_data.json'
             if (window.navigator.msSaveBlob) {
               // for IE

@@ -57,7 +57,7 @@
     <label for="json_file" class='square_btn' style="margin-left: 5rem">
           <h3>Download json file</h3>
           <input type="button" name="json_file" id='json_file' style='display:none' v-on:click='get_json'>
-        </label>
+    </label>
   </div>
 </template>
 
