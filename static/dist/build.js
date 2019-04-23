@@ -29699,7 +29699,7 @@ module.exports = { "default": __webpack_require__(271), __esModule: true };
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__ = __webpack_require__(146);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ecf59a56_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(615);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_62653bb6_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(615);
 function injectStyle (ssrContext) {
   __webpack_require__(275)
 }
@@ -29719,7 +29719,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ecf59a56_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_62653bb6_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -29900,29 +29900,30 @@ var downloadable = __webpack_require__(613);
       });
     },
     get_json: function get_json() {
-      var that = this;
-      var json = __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_json_stringify___default()(that.gib, null, '\t');
-      // console.log(json)
-      var blob = new Blob([json], { type: 'application/json' });
-      var url = window.URL.createObjectURL(blob);
-      var a = document.createElement('a');
-      // a.target = '_blank'
-      a.download = 'gib.json';
-      // a.textContent = 'download sample_data.json'
-      if (window.navigator.msSaveBlob) {
-        // for IE
-        window.navigator.msSaveBlob(blob, name);
-      } else if (window.URL && window.URL.createObjectURL) {
-        // for Firefox
-        a.href = window.URL.createObjectURL(blob);
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      } else if (window.webkitURL && window.webkitURL.createObject) {
-        // for Chrome 
-        a.href = window.webkitURL.createObjectURL(blob);
-        a.click();
-      }
+      d3.json('../image/gib.json').then(function (graph) {
+        var json = __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_json_stringify___default()(graph, null, '\t');
+        // console.log(json)
+        var blob = new Blob([json], { type: 'application/json' });
+        var url = window.URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        // a.target = '_blank'
+        a.download = 'gib.json';
+        // a.textContent = 'download sample_data.json'
+        if (window.navigator.msSaveBlob) {
+          // for IE
+          window.navigator.msSaveBlob(blob, name);
+        } else if (window.URL && window.URL.createObjectURL) {
+          // for Firefox
+          a.href = window.URL.createObjectURL(blob);
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        } else if (window.webkitURL && window.webkitURL.createObject) {
+          // for Chrome 
+          a.href = window.webkitURL.createObjectURL(blob);
+          a.click();
+        }
+      });
     },
     sendData: function sendData(e) {
       var that = this;
@@ -40384,7 +40385,7 @@ var content = __webpack_require__(276);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("b01f3f14", content, true, {});
+var update = __webpack_require__(17)("27b458ae", content, true, {});
 
 /***/ }),
 /* 276 */

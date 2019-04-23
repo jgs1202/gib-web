@@ -165,31 +165,32 @@ export default {
       })
     },
     get_json: function() {
-      let that = this
-      let json = JSON.stringify(that.gib, null, '\t')
-      // console.log(json)
-      let blob = new Blob([json], {type: 'application/json'})
-      let url = window.URL.createObjectURL(blob)
-      let a = document.createElement('a')
-      // a.target = '_blank'
-      a.download = 'gib.json'
-      // a.textContent = 'download sample_data.json'
-      if (window.navigator.msSaveBlob) {
-        // for IE
-        window.navigator.msSaveBlob(blob, name)
-      }
-      else if (window.URL && window.URL.createObjectURL) {
-        // for Firefox
-        a.href = window.URL.createObjectURL(blob);
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      }
-      else if (window.webkitURL && window.webkitURL.createObject) {
-        // for Chrome 
-        a.href = window.webkitURL.createObjectURL(blob);
-        a.click();
-      }
+      d3.json('../image/gib.json').then(function(graph){
+        let json = JSON.stringify(graph, null, '\t')
+            // console.log(json)
+            let blob = new Blob([json], {type: 'application/json'})
+            let url = window.URL.createObjectURL(blob)
+            let a = document.createElement('a')
+            // a.target = '_blank'
+            a.download = 'gib.json'
+            // a.textContent = 'download sample_data.json'
+            if (window.navigator.msSaveBlob) {
+              // for IE
+              window.navigator.msSaveBlob(blob, name)
+            }
+            else if (window.URL && window.URL.createObjectURL) {
+              // for Firefox
+              a.href = window.URL.createObjectURL(blob);
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+            }
+            else if (window.webkitURL && window.webkitURL.createObject) {
+              // for Chrome 
+              a.href = window.webkitURL.createObjectURL(blob);
+              a.click();
+            }
+      })
     },
     sendData: function (e) {
       let that = this
