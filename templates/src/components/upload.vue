@@ -210,7 +210,7 @@ export default {
           // jsonpCallback: 'data',
           // dataType: 'text',
           contentType: 'application/json;charset=UTF-8',
-          timeout: 10000
+          timeout: 100000
         })
         .done(function(res) {
           that.message = null
