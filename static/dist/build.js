@@ -56506,8 +56506,8 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
       * @return null
       */
       this.on = function (obj, type, listener, context, useCapture) {
-        var id = this._id.apply(this, arguments),
-            handler = function (e) {
+        var id = this._id.apply(this, arguments);
+        var handler = function (e) {
               return listener.call(context || obj, e || window.event);
             };
 
@@ -56532,8 +56532,8 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
       * @return null
       */
       this.off = function (obj, type, listener, context, useCapture) {
-        var id = this._id.apply(this, arguments),
-            handler = obj[events_key] && obj[events_key][id];
+        var id = this._id.apply(this, arguments);
+        var handler = obj[events_key] && obj[events_key][id];
 
         if (!handler) {
           return;
