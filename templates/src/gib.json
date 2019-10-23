@@ -1,6 +1,20 @@
 {
     "file": "gib.json",
     "groupSize": 2,
+    "groups": [
+        {
+            "dx": 0,
+            "dy": 0,
+            "x": 0,
+            "y": 0
+        },
+        {
+            "dx": 0,
+            "dy": 0,
+            "x": 0,
+            "y": 0
+        }
+    ],
     "linkSize": 3,
     "links": [
         {
