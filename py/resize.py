@@ -115,8 +115,13 @@ def sizing(data):
     dic['dy'] = outHeight + margin*2
     data['groups'].append(dic)
     # for i in range(len(data['nodes'])):
+<<<<<<< HEAD
     #     data['nodes'][i]['cx'] += margin
     #     data['nodes'][i]['cy'] += margin
+=======
+        # data['nodes'][i]['cx'] += margin
+        # data['nodes'][i]['cy'] += margin
+>>>>>>> d64973fcba030220dbede43cd8d841160597e9fe
 
     sizes.append(data['groupSize'])
 

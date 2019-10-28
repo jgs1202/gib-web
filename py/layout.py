@@ -30,7 +30,7 @@ def application(data):
         current = nodes[i]['group']
         if current > maxGroup:
             maxGroup = current
-    groups = [[] for i in range(maxGroup+1)]
+    groups = [[] for i in range(maxGroup + 1)]
 
     # make list 'groups' a list have nodes' index
     for i in range(length):
