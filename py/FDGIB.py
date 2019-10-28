@@ -17,7 +17,6 @@ def force(data, width, height, groups):
     #     G.add_edge(i, length)
     # calculate the number of links in each group
     linkNum = count_link(data)
-    print(linkNum)
     for i in range(len(linkNum)):
         for j in range(len(linkNum[i])):
             if linkNum[i][j] != 0:
@@ -25,7 +24,7 @@ def force(data, width, height, groups):
 
     # plt.figure(figsize=(9.6, 6))
     pos = nx.spring_layout(G)
-    print(pos)
+    # print(pos)
     # nx.draw_networkx(G, pos)
     # plt.ylim(1, -1)
     # plt.show()
@@ -73,7 +72,6 @@ def count_link(data):
     links = data['links']
     # print(len(links))
     for i in links:
-        # print(i)
         source = data['nodes'][i['source']]['group']
         target = data['nodes'][i['target']]['group']
         if source != target:
