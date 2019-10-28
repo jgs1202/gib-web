@@ -51,7 +51,7 @@ def application(data):
     cmd = ['rm ' + file, 'rm ' + file[:-5] + '-nodes.txt']
     for i in cmd:
         os.system(i)
-    os.chdir('../')
+    os.chdir('/home/jgs_kuee/gib-web')
 
     return data
 
