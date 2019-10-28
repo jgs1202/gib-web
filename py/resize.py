@@ -7,7 +7,6 @@ import sys
 
 
 def sizing(data):
-    print(data['groups'])
     width = 1620.7
     width = 960
     height = 600
@@ -132,12 +131,12 @@ def main():
     num = 0
     for file in os.listdir(main):
         if file[-5:] == '.json':
-            print(file)
+            # print(file)
             path = main + file
             # print(path)
             resize(path, num, main)
             num += 1
-    print(sizes.count(8), sizes.count(17))
+    # print(sizes.count(8), sizes.count(17))
 
 if __name__ == '__main__':
     global width

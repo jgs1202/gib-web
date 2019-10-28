@@ -31,7 +31,6 @@ def makeData(center, links, boxes, data, linkNum):
                 dic['node1'] = i
                 dic['node2'] = i+j
                 links.append(dic)
-    print(links)
 
 
 def checkPRISM(center, links, boxes, width, height):
@@ -132,9 +131,9 @@ def checkPRISM(center, links, boxes, width, height):
                             # print('8')
                             center[links[i]['node2']][1] = center[links[i]['node1']][1] + center[links[i]['node1']][3] + center[links[i]['node2']][3] + 10
         num += 1
-        print(t)
-        print(t.count(1.0))
-    print('step1 : ' + str(num))
+    #     print(t)
+    #     print(t.count(1.0))
+    # print('step1 : ' + str(num))
 
 
 def checkAll(center, boxes, data, width, height):
@@ -252,9 +251,9 @@ def checkAll(center, boxes, data, width, height):
         else:
             double = 0
         num += 1
-        print(t)
+        # print(t)
     # print(t)
-    print('step2 : ' + str(num))
+    # print('step2 : ' + str(num))
 
     # import pylab as pl
     # pl.xticks([0, width])
