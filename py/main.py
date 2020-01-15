@@ -4,9 +4,9 @@ import networkx as nx
 from networkx.readwrite import json_graph
 from pyomo.opt import SolverFactory
 import pyomo.environ
-from squarify import squarify, normalize_sizes, squarify_tree_structure
-from define_model import Kx, K_group
-from define_model import define_model, get_x_coord, get_y_coord
+from .squarify import squarify, normalize_sizes, squarify_tree_structure
+from .define_model import Kx, K_group
+from .define_model import define_model, get_x_coord, get_y_coord
 import sys
 
 
