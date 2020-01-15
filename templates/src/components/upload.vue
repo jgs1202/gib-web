@@ -96,6 +96,7 @@ export default {
       selected: [],
       related: [],
       redLinks: [],
+      groupColors: [],
       zoom: null
     }
   },
@@ -234,10 +235,14 @@ export default {
     },
     restart: function() {
       var that = this
+      that.groupColors = []
+      for (let i=0; i<parseInt(that.gib.groups.length); i++) {
+        that.groupColors.push(d3.interpolateRainbow(i / that.gib.groups.length))
+      }
       that.gib.groups.pop()
-        that.$set(that.boxes, that.reBoxes())
-        that.$set(that.links, that.reLinks())
-        that.$set(that.nodes, that.reNodes())
+      that.$set(that.boxes, that.reBoxes())
+      that.$set(that.links, that.reLinks())
+      that.$set(that.nodes, that.reNodes())
     },
     reNodes: function() {
       var that = this;
@@ -259,7 +264,7 @@ export default {
               .attr("cy", that.gib.nodes[i].cy)
               .attr("fill", function(d, i) {
                 // return that.color(d.group / that.gib.groups.length);
-                return d3.interpolateRainbow(d.group / that.gib.groups.length)
+                return that.groupColors[parseInt(d.group)]
               })
             selection.on('mouseover', function(d, i){
               selection.attr('r', that.selectSize)
@@ -267,7 +272,7 @@ export default {
               if (d.name) {
                 that.nodeData.name = d.name
               } if (d.group) {
-                that.nodeData.group = d.group
+                that.nodeData.group = that.gib.groups[parseInt(d.group)].name
               }
             })
             selection.on('click', function(d, i){
@@ -375,77 +380,84 @@ export default {
 		},
     selectNode: function(d, i){
       let that = this
-      let preference = d.name
+      let preference = d.id
+      let groupOfSelected = d.group
       let select_number = d.id
       if ($.inArray(d, that.selected) < 0){
         let relLinks = []
         let relNodes = []
         for (let i=0; i < that.gib.links.length; i++){
-          if ((d.name === that.gib.links[i].source) || (d.name === that.gib.links[i].target)){
+          if ((d.id === that.gib.links[i].source) || (d.id === that.gib.links[i].target)){
             relLinks.push(that.gib.links[i])
           }
         }
-        // console.log(relLinks)
         for (let n=0; n < relLinks.length; n++){
-          if (relLinks[n].source === d.name){
+          if (relLinks[n].source === d.id){
             relNodes.push(relLinks[n].target)
-          } else if (relLinks[n].target === d.name){
+          } else if (relLinks[n].target === d.id){
             relNodes.push(relLinks[n].source)
           }
         }
         d3.selectAll("circle")
-          .each(function(d, i) {
+          .each(function(nd, ni) {
             var selection = d3.select(this)
             if (relLinks.length !== 0) {
               for (let n=0; n<relNodes.length; n++){
-                if (d.name == relNodes[n]) {
+                if (nd.id == relNodes[n]) {
                   that.related[parseInt(relNodes[n])].push(select_number)
-                  if ($.inArray(d, that.selected) < 0){
+                  if ($.inArray(nd, that.selected) < 0){
                     selection.attr('r', that.relatedSize)
                   }
                 }
-                else if (d.name === preference) {
+                else if (nd.id === preference) {
                   selection.attr('r', that.selectSize)
                   selection.attr('stroke', 'yellow')
                   selection.attr('stroke-width', 3)
-                  if ($.inArray(d, that.selected) < 0){
-                    that.selected.push(d)
+                  if ($.inArray(nd, that.selected) < 0){
+                    that.selected.push(nd)
                   }
                 }
               }
-            } else if (d.name === preference) {
+            } else if (nd.id === preference) {
               selection.attr('r', that.selectSize)
               selection.attr('stroke', 'yellow')
               selection.attr('stroke-width', 3)
-              if ($.inArray(d, that.selected) < 0){
-                that.selected.push(d)
+              if ($.inArray(nd, that.selected) < 0){
+                that.selected.push(nd)
               }
             }
           })
         d3.selectAll('line')
-          .each(function(d, i){
+          .each(function(ld, li){
             let selection = d3.select(this)
             for (let n=0; n<relLinks.length; n++){
-              if (relLinks[n].id === d.id){
-                that.redLinks[parseInt(d.id)].push(parseInt(select_number))
-                selection.attr('stroke', 'red')
+              if (relLinks[n].id === ld.id){
+                that.redLinks[parseInt(ld.id)].push(parseInt(select_number))
+                selection.attr('stroke', that.groupColors[groupOfSelected])
                 selection.attr('stroke-width', 1.5)
+                if (that.selected.indexOf(that.gib.nodes[ld.source]) >= 0) {
+                  if (that.selected.indexOf(that.gib.nodes[ld.target]) >= 0) {
+                    selection.attr('stroke', d3.rgb(255, 135, 180))
+                    selection.attr('stroke-width', 3)
+
+                  }
+                }
               }
             }
         })
       } else {
         let rmList = []
         for (let n=0; n<that.selected.length; n++){
-          if (that.selected[n].name === preference){
+          if (that.selected[n].id === preference){
             let front = that.selected.slice(0, n)
             let back = that.selected.slice(n+1, that.selected.length)
             that.selected = front.concat(back)
           }
         }
         d3.selectAll("circle")
-          .each(function(d, i) {
+          .each(function(nd, ni) {
             var selection = d3.select(this)
-            if (d.id === select_number){
+            if (nd.id === select_number){
               selection.attr('r', that.normalSize)
               selection.attr('stroke-width', 0)
             } else {
@@ -463,9 +475,9 @@ export default {
             }
           })
         d3.selectAll("circle")
-          .each(function(d, i) {
+          .each(function(nd, ni) {
             var selection = d3.select(this)
-            if ($.inArray(d.id, rmList) > -1){
+            if ($.inArray(nd.id, rmList) > -1){
               selection.attr('r', that.normalSize)
             }
         })
@@ -478,11 +490,14 @@ export default {
             that.redLinks[n] = front.concat(back)
           }
         }
-        d3.selectAll('line').each(function(d, i) {
+        d3.selectAll('line').each(function(ld, li) {
           let selection = d3.select(this)
-          if (that.redLinks[parseInt(d.id)].length === 0){
+          if (that.redLinks[parseInt(ld.id)].length === 0){
             selection.attr('stroke', 'gray')
             selection.attr('stroke-width', 0.4)
+          } else if (that.redLinks[parseInt(ld.id)].length === 1) {
+            selection.attr('stroke', that.groupColors[that.gib.nodes[that.redLinks[parseInt(ld.id)]].group])
+            selection.attr('stroke-width', 1.5)
           }
         })
       }
