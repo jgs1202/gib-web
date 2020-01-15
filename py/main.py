@@ -1,20 +1,17 @@
 import json
 import argparse
-import networkx as nx
 from networkx.readwrite import json_graph
 from pyomo.opt import SolverFactory
-import pyomo.environ
 from .squarify import squarify, normalize_sizes, squarify_tree_structure
 from .define_model import Kx, K_group
 from .define_model import define_model, get_x_coord, get_y_coord
-import sys
 
 
-def run(graph_data, width, height, outfile):
+def run(graph_data, width, height):
     graph = json_graph.node_link_graph(graph_data)
-    groups = {graph.nodes()[u]['group'] for u in graph.nodes()}
+    groups = {graph.node[u]['group'] for u in graph.nodes()}
     sizes = [(len([u for u in graph.nodes()
-                   if graph.nodes[u]['group'] == group]), group)
+                   if graph.node[u]['group'] == group]), group)
              for group in groups]
     sizes.sort(reverse=True)
     values = normalize_sizes([v for v, _ in sizes], width, height)
@@ -33,8 +30,8 @@ def run(graph_data, width, height, outfile):
         t['id'] = sizes[i][1]
 
     model = define_model(graph, K)
-    solver = SolverFactory("glpk")
-    result = solver.solve(model, tee=True, timelimit=60)
+    solver = SolverFactory("cbc")
+    result = solver.solve(model, tee=True, timelimit=300)
     opt_tree = [{
                     'id': K[j].group,
                     'x': get_x_coord(K, model, j),
@@ -57,9 +54,10 @@ def run(graph_data, width, height, outfile):
             opt_tree[i]['name'] = graph_data['groups'][i]['name']
     graph_data['groups'] = opt_tree
     for link in graph_data['links']:
-        link['value'] = 1
-    json.dump(graph_data, open(outfile, 'w'), ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
+        if 'value' not in link.keys():
+            link['value'] = 1
     print('computation time: {}'.format(result.solver.time))
+    return graph_data
 
 
 def main():
