@@ -39,7 +39,7 @@ def application(data):
         groups[nodes[i]['group']].append(dic)
 
     with_box = classify(data, groups, width, height)
-    os.chdir('rust-fd-layout')
+    os.chdir('/home/jgs_kuee/gib-web/rust-fd-layout')
     os.system('pwd')
     file = '../data/' + str(math.floor(time.time())) + str(math.floor(random.random())) + '.json'
     f = open(file, 'w')
