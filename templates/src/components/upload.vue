@@ -90,9 +90,10 @@ export default {
         group: null,
       },
       status: 'Send File',
-      normalSize: 3,
-      relatedSize: 5,
-      selectSize: 7,
+      normalSize: 2,
+      relatedSize: 4,
+      selectSize: 5,
+      selectWidth: 2.5,
       selected: [],
       related: [],
       redLinks: [],
@@ -412,7 +413,7 @@ export default {
                 else if (nd.id === preference) {
                   selection.attr('r', that.selectSize)
                   selection.attr('stroke', 'yellow')
-                  selection.attr('stroke-width', 3)
+                  selection.attr('stroke-width', that.selectWidth)
                   if ($.inArray(nd, that.selected) < 0){
                     that.selected.push(nd)
                   }
@@ -421,7 +422,7 @@ export default {
             } else if (nd.id === preference) {
               selection.attr('r', that.selectSize)
               selection.attr('stroke', 'yellow')
-              selection.attr('stroke-width', 3)
+              selection.attr('stroke-width', that.selectWidth)
               if ($.inArray(nd, that.selected) < 0){
                 that.selected.push(nd)
               }
