@@ -16,7 +16,7 @@ from .resize import sizing
 
 def application(data):
     data = json.loads(data.decode('utf-8'))
-    group_info = data['groups']
+    group_info = data['data']['groups']
     if 'dx' in data['data']['groups'][0]:
         if data['data']['groups'][-1]['dx'] > 900:
             del data['data']['groups'][-1]
