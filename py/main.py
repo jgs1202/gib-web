@@ -3,6 +3,7 @@ import argparse
 import networkx as nx
 from networkx.readwrite import json_graph
 from pyomo.opt import SolverFactory
+import pyomo.environ
 from squarify import squarify, normalize_sizes, squarify_tree_structure
 from define_model import Kx, K_group
 from define_model import define_model, get_x_coord, get_y_coord
@@ -32,8 +33,8 @@ def run(graph_data, width, height, outfile):
         t['id'] = sizes[i][1]
 
     model = define_model(graph, K)
-    solver = SolverFactory("cbc")
-    result = solver.solve(model, tee=True, timelimit=100)
+    solver = SolverFactory("glpk")
+    result = solver.solve(model, tee=True, timelimit=60)
     opt_tree = [{
                     'id': K[j].group,
                     'x': get_x_coord(K, model, j),
