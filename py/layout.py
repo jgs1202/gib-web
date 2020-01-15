@@ -16,6 +16,7 @@ from .resize import sizing
 
 def application(data):
     data = json.loads(data.decode('utf-8'))
+    group_info = data['groups']
     if 'dx' in data['data']['groups'][0]:
         if data['data']['groups'][-1]['dx'] > 900:
             del data['data']['groups'][-1]
@@ -39,7 +40,7 @@ def application(data):
         groups[nodes[i]['group']].append(dic)
 
     with_box = classify(data, groups, width, height)
-    os.chdir('rust-fd-layout')
+    os.chdir('/home/jgs_kuee/gib-web/rust-fd-layout')
     os.system('pwd')
     file = '../data/' + str(math.floor(time.time())) + str(math.floor(random.random())) + '.json'
     f = open(file, 'w')
@@ -52,7 +53,11 @@ def application(data):
     for i in cmd:
         os.system(i)
     os.chdir('/home/jgs_kuee/gib-web')
-
+    for m in range(len(data['groups'])):
+        try:
+            data['groups'][m]['name'] = group_info[m]['name']
+        except:
+            pass
     return data
 
 
