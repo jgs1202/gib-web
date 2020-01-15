@@ -78,7 +78,13 @@ export default {
         strokeColor: '#29B5FF',
         width: 100,
         svgWigth: 960,
-        svgHeight: 600
+        svgHeight: 600,
+        margin: {
+          top: 2,
+          right: 2,
+          bottom: 2,
+          left: 2
+        }
       },
       nodes: [],
       links: [],
@@ -90,10 +96,10 @@ export default {
         group: null,
       },
       status: 'Send File',
-      normalSize: 2,
-      relatedSize: 4,
+      normalSize: 3,
+      relatedSize: 4.5,
       selectSize: 5,
-      selectWidth: 2.5,
+      selectWidth: 2,
       selected: [],
       related: [],
       redLinks: [],
@@ -109,7 +115,13 @@ export default {
     that.zoom = d3.zoom()
       .scaleExtent([1 / 2, 12])
       .on('zoom', that.zoomed)
-    d3.select('svg').call(that.zoom)
+    d3.select("svg")
+      // .attr("width", that.settings.svgWigth)
+      // .attr("height", that.settings.svgHeight)
+      .call(that.zoom)
+      .append("g")
+      .attr("transform", "translate(" + that.settings.margin.left + "," + that.settings.margin.top + ")");
+
     d3.select('svg').call(downloadable.downloadable().filename('graph.png'))
     // console.log('downloadable')
   },
@@ -256,7 +268,7 @@ export default {
           .enter().append("circle")
           .attr('cx', that.settings.svgWigth / 2)
           .attr('cy', that.settings.svgHeight / 2)
-          .attr("r", 3)
+          .attr("r", that.normalSize)
         return d3.selectAll("circle")
           .each(function(d, i) {
             var selection = d3.select(this)
@@ -543,7 +555,7 @@ export default {
   /* border: 1px solid #67C23A; */
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }
 
 .el-main {
