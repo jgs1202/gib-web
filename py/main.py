@@ -30,7 +30,7 @@ def run(graph_data, width, height):
         t['id'] = sizes[i][1]
 
     model = define_model(graph, K)
-    solver = SolverFactory("cbc")
+    solver = SolverFactory("glpk")
     result = solver.solve(model, tee=True, timelimit=300)
     opt_tree = [{
                     'id': K[j].group,
