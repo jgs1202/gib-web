@@ -31,7 +31,7 @@ def run(graph_data, width, height):
 
     model = define_model(graph, K)
     solver = SolverFactory("glpk")
-    result = solver.solve(model, tee=True, timelimit=60)
+    result = solver.solve(model, tee=True, timelimit=20)
     opt_tree = [{
                     'id': K[j].group,
                     'x': get_x_coord(K, model, j),
