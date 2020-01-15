@@ -26,6 +26,5 @@ body{
   height: 95%;
   width: 95%;
   margin: auto;
-  max-width: 1700px;
 }
 </style>

@@ -30,7 +30,7 @@
           Current Node data:<br><br>
           Name &nbsp;: {{nodeData.name}}<br>
           Group : {{nodeData.group}}<br>
-        </div><br>
+        </div>
         <br><br>
         <label for="reset" class='square_btn'>
           Reset zoom
@@ -158,7 +158,7 @@ export default {
               document.body.removeChild(a);
             }
             else if (window.webkitURL && window.webkitURL.createObject) {
-              // for Chrome 
+              // for Chrome
               a.href = window.webkitURL.createObjectURL(blob);
               a.click();
             }
@@ -186,7 +186,7 @@ export default {
               document.body.removeChild(a);
             }
             else if (window.webkitURL && window.webkitURL.createObject) {
-              // for Chrome 
+              // for Chrome
               a.href = window.webkitURL.createObjectURL(blob);
               a.click();
             }
@@ -328,7 +328,29 @@ export default {
     reBoxes: function() {
       var that = this
       if (that.gib) {
-      	d3.selectAll('rect').remove()
+        d3.selectAll('rect').remove()
+      	d3.selectAll('text').remove()
+
+        let x_margin = 5
+        let y_margin = 12
+        d3.select('svg').append('g')
+          .attr('class', 'groupName')
+          .selectAll('text')
+          .data(that.gib.groups)
+          .enter().append("text")
+          .text(function(d, num) {
+            return d.name
+          })
+          .attr('x', function(d, num) {
+            return d.x + x_margin
+          })
+          .attr('y', function(d, num) {
+            return d.y + y_margin
+          })
+          .attr("font-family", "sans-serif")
+          .attr("font-size", "10px")
+          .attr("fill", "black");
+
         d3.select("svg").append("g")
           .attr("class", "rect")
           .selectAll("rect")
@@ -473,7 +495,7 @@ export default {
 
 .controls {
   text-align: center;
-  width: 80%;
+  width: 95%;
   margin: auto;
   padding-bottom: 2rem;
   margin-top: 2rem;
@@ -505,6 +527,7 @@ export default {
   /* border: 1px solid #67C23A; */
   box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
   text-align: center;
+  font-size: 1.5vw;
 }
 
 .el-main {
@@ -523,7 +546,6 @@ export default {
 .controls>*+* {
   margin-top: 1rem;
 }
-
 .links line {
   stroke-opacity: 1;
 }
