@@ -29697,7 +29697,7 @@ module.exports = { "default": __webpack_require__(271), __esModule: true };
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__ = __webpack_require__(146);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8648ae9e_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(615);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ea2fa13a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(615);
 function injectStyle (ssrContext) {
   __webpack_require__(275)
 }
@@ -29717,7 +29717,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_8648ae9e_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_ea2fa13a_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -29817,7 +29817,13 @@ var downloadable = __webpack_require__(613);
         strokeColor: '#29B5FF',
         width: 100,
         svgWigth: 960,
-        svgHeight: 600
+        svgHeight: 600,
+        margin: {
+          top: 2,
+          right: 2,
+          bottom: 2,
+          left: 2
+        }
       },
       nodes: [],
       links: [],
@@ -29846,7 +29852,11 @@ var downloadable = __webpack_require__(613);
     // ファイルが読み込まれた時の処理
     form.file.addEventListener('change', that.load, false);
     that.zoom = d3.zoom().scaleExtent([1 / 2, 12]).on('zoom', that.zoomed);
-    d3.select('svg').call(that.zoom);
+    d3.select("svg")
+    // .attr("width", that.settings.svgWigth)
+    // .attr("height", that.settings.svgHeight)
+    .call(that.zoom).append("g").attr("transform", "translate(" + that.settings.margin.left + "," + that.settings.margin.top + ")");
+
     d3.select('svg').call(downloadable.downloadable().filename('graph.png'));
     // console.log('downloadable')
   },
@@ -40410,7 +40420,7 @@ var content = __webpack_require__(276);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("08b3e59a", content, true, {});
+var update = __webpack_require__(17)("d850a004", content, true, {});
 
 /***/ }),
 /* 276 */
