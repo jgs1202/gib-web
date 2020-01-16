@@ -295,6 +295,7 @@ export default {
             selection.on('mouseout', function(d, i){
               that.nodeData.name = null
               that.nodeData.group = null
+              console.log(that.normalSize)
               if (($.inArray(d, that.selected) < 0) && (that.related[d.id].length === 0)){
                 selection.attr('r', that.normalSize)
               } else if (($.inArray(d, that.selected) < 0) && (that.related[d.id].length !== 0)){
