@@ -15,7 +15,6 @@ import random
 
 def makeData(center, links, boxes, data, linkNum):
     length = len(data['groups'])
-    print(length)
     for i in range(length):
         if data['groups'][i]['dx'] == 0:
             data['groups'][i]['dx'] = 15
@@ -63,7 +62,6 @@ def checkPRISM(center, links, boxes, width, height):
         for i in range(length):
             dic = {}
             # print(links[i])
-            print(len(center), links[i]['node2'], links[i]['node1'])
             if center[links[i]['node1']][0] != center[links[i]['node2']][0]:
                 xover = (center[links[i]['node1']][2] + center[links[i]['node2']][2] +5) / ( abs( center[links[i]['node1']][0] - center[links[i]['node2']][0]) )
             else:

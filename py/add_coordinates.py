@@ -51,8 +51,6 @@ def add(file):
             # print(data['nodes'][i])
             # print(list[int(data['nodes'][i]['id'])])
             # print(list)
-            print('subscribe')
-            print(data['nodes'][i], data['nodes'][i]['id'], len(list), list[int(data['nodes'][i]['id'])])
             data['nodes'][i]['cx'] = list[int(data['nodes'][i]['id'])]['cx']
             data['nodes'][i]['cy'] = list[int(data['nodes'][i]['id'])]['cy']
         return data

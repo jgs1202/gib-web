@@ -26,6 +26,10 @@ def application(data):
     width = 960
     height = 600
 
+    last_group = data['data']['groups'][-1]
+    if last_group['x'] == 0 and last_group['y'] == 0 and last_group['dx'] == width and last_group['dy'] == height:
+        data['data']['groups'] = data['data']['groups'][:-1]
+
     # get length of group
     for i in range(length):
         current = nodes[i]['group']

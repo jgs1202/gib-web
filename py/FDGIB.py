@@ -11,7 +11,6 @@ from statistics import mean
 def force(data, width, height, groups):
     G = nx.Graph()
     length = len(data['groups'])
-    print(length)
     G.add_nodes_from([i for i in range(length)])
     # G.add_node(length)
     # for i in range(length):
@@ -60,7 +59,6 @@ def force(data, width, height, groups):
 
 def count_link(data):
     boxNum = len(data['groups'])
-    print('boxnum is ' + str(boxNum))
     linkNum = []
     for i in range(boxNum):
         linkNum.append([])
