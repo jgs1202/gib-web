@@ -10,7 +10,7 @@ from statistics import mean
 
 def force(data, width, height, groups):
     G = nx.Graph()
-    length = len(data['groups'] + 1)
+    length = len(data['groups']) + 1
     print(length)
     G.add_nodes_from([i for i in range(length)])
     # G.add_node(length)
