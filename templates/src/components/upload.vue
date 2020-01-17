@@ -18,7 +18,7 @@
             <el-radio label="CD-GIB" border size='medium' class='layoutButton'></el-radio><br>
             <el-radio label="FD-GIB" border size='medium' class='layoutButton'></el-radio>
             <el-radio label="TR-GIB" border size='medium' class='layoutButton'></el-radio><br>
-            <el-radio label="Direct" border size='medium' class='layoutButton'></el-radio>
+            <el-radio label="Direct (for developer)" border size='medium' class='layoutButton' id='direct'></el-radio>
           </el-radio-group>
           <br><br>
         </span>
@@ -616,6 +616,10 @@ export default {
 
 .layoutButton {
   width: 45%;
+}
+
+#direct {
+  width: 95%;
 }
 
 .el-container {
