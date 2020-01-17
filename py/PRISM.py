@@ -15,6 +15,7 @@ import random
 
 def makeData(center, links, boxes, data, linkNum):
     length = len(data['groups'])
+    print(length)
     for i in range(length):
         if data['groups'][i]['dx'] == 0:
             data['groups'][i]['dx'] = 15
