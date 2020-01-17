@@ -39,6 +39,7 @@ def application(data):
         dic = {}
         dic['number'] = i
         groups[nodes[i]['group']].append(dic)
+    print(len(groups))
 
     with_box = classify(data, groups, width, height)
     os.chdir('/home/jgs_kuee/gib-web/rust-fd-layout')

@@ -11,6 +11,7 @@ from statistics import mean
 def force(data, width, height, groups):
     G = nx.Graph()
     length = len(data['groups'])
+    print(length)
     G.add_nodes_from([i for i in range(length)])
     # G.add_node(length)
     # for i in range(length):
@@ -40,7 +41,6 @@ def force(data, width, height, groups):
     ################################### width * height boxへの対応
     area = width * height * 0.2
     unit = area / len(data['nodes'])
-    print(length)
     for i in range(length):
         data['groups'][i]['dx'] = math.sqrt(unit * len(groups[i]))
         data['groups'][i]['dy'] = data['groups'][i]['dx']
