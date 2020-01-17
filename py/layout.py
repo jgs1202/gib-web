@@ -71,5 +71,6 @@ def classify(data, groups, width, height):
     elif data['layout'] == 'TR-GIB':
         out = TR(data['data'], width, height, groups)
     if data['layout'] == 'FD-GIB':
+        print(len(groups))
         out = sizing(force(data['data'], width, height, groups))
     return out
