@@ -29697,7 +29697,7 @@ module.exports = { "default": __webpack_require__(271), __esModule: true };
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__ = __webpack_require__(146);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1caa7d46_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(615);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_698e1190_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__ = __webpack_require__(615);
 function injectStyle (ssrContext) {
   __webpack_require__(275)
 }
@@ -29717,7 +29717,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_upload_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1caa7d46_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_698e1190_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_upload_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -29737,6 +29737,7 @@ var Component = normalizeComponent(
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
 
+//
 //
 //
 //
@@ -29944,19 +29945,37 @@ var downloadable = __webpack_require__(613);
         data.data = that.graph;
         data.layout = that.layout;
         // console.log(typeof JSON.stringify(data))
-        __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.ajax({
-          // url: 'http://35.233.171.147:80/upload',
-          url: 'http://35.233.171.147/upload',
-          type: 'POST',
-          data: __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_json_stringify___default()(data),
-          // dataType: 'json',
-          // jsonpCallback: 'data',
-          // dataType: 'text',
-          contentType: 'application/json;charset=UTF-8',
-          timeout: 10000000
-        }).done(function (res) {
-          that.message = null;
-          that.gib = res;
+        if (that.layout != 'Direct') {
+          __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.ajax({
+            // url: 'http://35.233.171.147:80/upload',
+            url: 'http://35.233.171.147/upload',
+            type: 'POST',
+            data: __WEBPACK_IMPORTED_MODULE_0_babel_runtime_core_js_json_stringify___default()(data),
+            // dataType: 'json',
+            // jsonpCallback: 'data',
+            // dataType: 'text',
+            contentType: 'application/json;charset=UTF-8',
+            timeout: 10000000
+          }).done(function (res) {
+            that.message = null;
+            that.gib = res;
+            that.restart();
+            that.status = 'Send File';
+            that.related = [];
+            for (var i = 0; i < that.gib.nodes.length; i++) {
+              that.related.push([]);
+            }
+            that.redLinks = [];
+            for (var _i = 0; _i < that.gib.links.length; _i++) {
+              that.redLinks.push([]);
+            }
+          }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
+            that.status = 'Send File';
+            swal('An error occurred! Please send us a message from the contact.');
+          });
+        } else {
+          console.log('direct');
+          that.gib = that.graph;
           that.restart();
           that.status = 'Send File';
           that.related = [];
@@ -29964,13 +29983,10 @@ var downloadable = __webpack_require__(613);
             that.related.push([]);
           }
           that.redLinks = [];
-          for (var _i = 0; _i < that.gib.links.length; _i++) {
+          for (var _i2 = 0; _i2 < that.gib.links.length; _i2++) {
             that.redLinks.push([]);
           }
-        }).fail(function (XMLHttpRequest, textStatus, errorThrown) {
-          that.status = 'Send File';
-          swal('An error occurred! Please send us a message from the contact.');
-        });
+        }
       }
     },
     restart: function restart() {
@@ -30083,9 +30099,9 @@ var downloadable = __webpack_require__(613);
       if (__WEBPACK_IMPORTED_MODULE_1_jquery___default.a.inArray(d, that.selected) < 0) {
         var relLinks = [];
         var relNodes = [];
-        for (var _i2 = 0; _i2 < that.gib.links.length; _i2++) {
-          if (d.id === that.gib.links[_i2].source || d.id === that.gib.links[_i2].target) {
-            relLinks.push(that.gib.links[_i2]);
+        for (var _i3 = 0; _i3 < that.gib.links.length; _i3++) {
+          if (d.id === that.gib.links[_i3].source || d.id === that.gib.links[_i3].target) {
+            relLinks.push(that.gib.links[_i3]);
           }
         }
         for (var n = 0; n < relLinks.length; n++) {
@@ -40421,7 +40437,7 @@ var content = __webpack_require__(276);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(17)("7fc8dfaa", content, true, {});
+var update = __webpack_require__(17)("0e9ceec5", content, true, {});
 
 /***/ }),
 /* 276 */
@@ -54954,7 +54970,7 @@ exports.SVGConverter = SVGConverter
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"app"},[_c('el-container',{staticClass:"bottom"},[_c('el-aside',{attrs:{"width":"20%"}},[_c('br'),_c('br'),_vm._v(" "),_c('label',{staticClass:"square_btn",attrs:{"for":"fileid"}},[_vm._v("\n        Choose file\n        "),_c('form',{staticClass:"fileup",staticStyle:{"display":"none"},attrs:{"name":"form"}},[_c('input',{attrs:{"type":"file","name":"file","id":"fileid"}})])]),_vm._v(" "),_c('br'),_c('br'),_vm._v("\n      current file: "+_vm._s(_vm.current)+"\n      "),_c('br'),_c('br'),_vm._v(" "),_c('span',[_c('el-radio-group',{model:{value:(_vm.layout),callback:function ($$v) {_vm.layout=$$v},expression:"layout"}},[_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"ST-GIB","border":"","size":"medium"}}),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"CD-GIB","border":"","size":"medium"}}),_c('br'),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"FD-GIB","border":"","size":"medium"}}),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"TR-GIB","border":"","size":"medium"}})],1),_vm._v(" "),_c('br'),_c('br')],1),_vm._v(" "),_c('div',[_c('el-button',{attrs:{"id":"send","type":"success"},on:{"click":_vm.sendData}},[_vm._v(_vm._s(_vm.status)+"\n        ")]),_c('br'),_vm._v("\n        "+_vm._s(_vm.message)+"\n      ")],1),_vm._v(" "),_c('div',[_c('br'),_vm._v("\n        Current Node data:"),_c('br'),_c('br'),_vm._v("\n        Name  : "+_vm._s(_vm.nodeData.name)),_c('br'),_vm._v("\n        Group : "+_vm._s(_vm.nodeData.group)),_c('br')]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('label',{staticClass:"square_btn",attrs:{"for":"reset"}},[_vm._v("\n        Reset zoom\n        "),_c('input',{staticStyle:{"display":"none"},attrs:{"type":"button","name":"reset","id":"reset"},on:{"click":_vm.resetted}})])]),_vm._v(" "),_c('el-main',[_c('div',{staticClass:"svg-container",style:({width: _vm.settings.width + '%'})},[_c('svg',{attrs:{"id":"svg","pointer-events":"all","viewBox":"0 0 960 600","preserveAspectRatio":"xMinYMin meet"}},[_c('g',{attrs:{"id":"nodes"}},[_vm._v(_vm._s(_vm.nodes))]),_vm._v(" "),_c('g',{attrs:{"id":"links"}},[_vm._v(_vm._s(_vm.links))]),_vm._v(" "),_c('g',{attrs:{"id":"boxes"}},[_vm._v(_vm._s(_vm.boxes))])])])])],1),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('label',{staticClass:"square_btn",attrs:{"for":"down_sample"}},[_c('h3',[_vm._v("Download Sample Data")]),_vm._v(" "),_c('form',{staticClass:"sampleData",staticStyle:{"display":"none"},attrs:{"name":"sampleData"}},[_c('input',{attrs:{"type":"button","name":"down_sample","id":"down_sample"},on:{"click":_vm.sampleData}})])]),_vm._v(" "),_c('label',{staticClass:"square_btn",staticStyle:{"margin-left":"5rem"},attrs:{"for":"json_file"}},[_c('h3',[_vm._v("Download json file")]),_vm._v(" "),_c('input',{staticStyle:{"display":"none"},attrs:{"type":"button","name":"json_file","id":"json_file"},on:{"click":_vm.get_json}})])],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"app"},[_c('el-container',{staticClass:"bottom"},[_c('el-aside',{attrs:{"width":"20%"}},[_c('br'),_c('br'),_vm._v(" "),_c('label',{staticClass:"square_btn",attrs:{"for":"fileid"}},[_vm._v("\n        Choose file\n        "),_c('form',{staticClass:"fileup",staticStyle:{"display":"none"},attrs:{"name":"form"}},[_c('input',{attrs:{"type":"file","name":"file","id":"fileid"}})])]),_vm._v(" "),_c('br'),_c('br'),_vm._v("\n      current file: "+_vm._s(_vm.current)+"\n      "),_c('br'),_c('br'),_vm._v(" "),_c('span',[_c('el-radio-group',{model:{value:(_vm.layout),callback:function ($$v) {_vm.layout=$$v},expression:"layout"}},[_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"ST-GIB","border":"","size":"medium"}}),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"CD-GIB","border":"","size":"medium"}}),_c('br'),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"FD-GIB","border":"","size":"medium"}}),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"TR-GIB","border":"","size":"medium"}}),_c('br'),_vm._v(" "),_c('el-radio',{staticClass:"layoutButton",attrs:{"label":"Direct","border":"","size":"medium"}})],1),_vm._v(" "),_c('br'),_c('br')],1),_vm._v(" "),_c('div',[_c('el-button',{attrs:{"id":"send","type":"success"},on:{"click":_vm.sendData}},[_vm._v(_vm._s(_vm.status)+"\n        ")]),_c('br'),_vm._v("\n        "+_vm._s(_vm.message)+"\n      ")],1),_vm._v(" "),_c('div',[_c('br'),_vm._v("\n        Current Node data:"),_c('br'),_c('br'),_vm._v("\n        Name  : "+_vm._s(_vm.nodeData.name)),_c('br'),_vm._v("\n        Group : "+_vm._s(_vm.nodeData.group)),_c('br')]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('label',{staticClass:"square_btn",attrs:{"for":"reset"}},[_vm._v("\n        Reset zoom\n        "),_c('input',{staticStyle:{"display":"none"},attrs:{"type":"button","name":"reset","id":"reset"},on:{"click":_vm.resetted}})])]),_vm._v(" "),_c('el-main',[_c('div',{staticClass:"svg-container",style:({width: _vm.settings.width + '%'})},[_c('svg',{attrs:{"id":"svg","pointer-events":"all","viewBox":"0 0 960 600","preserveAspectRatio":"xMinYMin meet"}},[_c('g',{attrs:{"id":"nodes"}},[_vm._v(_vm._s(_vm.nodes))]),_vm._v(" "),_c('g',{attrs:{"id":"links"}},[_vm._v(_vm._s(_vm.links))]),_vm._v(" "),_c('g',{attrs:{"id":"boxes"}},[_vm._v(_vm._s(_vm.boxes))])])])])],1),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('label',{staticClass:"square_btn",attrs:{"for":"down_sample"}},[_c('h3',[_vm._v("Download Sample Data")]),_vm._v(" "),_c('form',{staticClass:"sampleData",staticStyle:{"display":"none"},attrs:{"name":"sampleData"}},[_c('input',{attrs:{"type":"button","name":"down_sample","id":"down_sample"},on:{"click":_vm.sampleData}})])]),_vm._v(" "),_c('label',{staticClass:"square_btn",staticStyle:{"margin-left":"5rem"},attrs:{"for":"json_file"}},[_c('h3',[_vm._v("Download json file")]),_vm._v(" "),_c('input',{staticStyle:{"display":"none"},attrs:{"type":"button","name":"json_file","id":"json_file"},on:{"click":_vm.get_json}})])],1)}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);

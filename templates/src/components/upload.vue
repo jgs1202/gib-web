@@ -17,7 +17,8 @@
             <el-radio label="ST-GIB" border size='medium' class='layoutButton'></el-radio>
             <el-radio label="CD-GIB" border size='medium' class='layoutButton'></el-radio><br>
             <el-radio label="FD-GIB" border size='medium' class='layoutButton'></el-radio>
-            <el-radio label="TR-GIB" border size='medium' class='layoutButton'></el-radio>
+            <el-radio label="TR-GIB" border size='medium' class='layoutButton'></el-radio><br>
+            <el-radio label="Direct" border size='medium' class='layoutButton'></el-radio>
           </el-radio-group>
           <br><br>
         </span>
@@ -215,20 +216,39 @@ export default {
         data.data = that.graph
         data.layout = that.layout
         // console.log(typeof JSON.stringify(data))
-        $.ajax({
-          // url: 'http://35.233.171.147:80/upload',
-          url: 'http://35.233.171.147/upload',
-          type: 'POST',
-          data: JSON.stringify(data),
-          // dataType: 'json',
-          // jsonpCallback: 'data',
-          // dataType: 'text',
-          contentType: 'application/json;charset=UTF-8',
-          timeout: 10000000
-        })
-        .done(function(res) {
-          that.message = null
-          that.gib = res
+        if (that.layout != 'Direct') {
+          $.ajax({
+            // url: 'http://35.233.171.147:80/upload',
+            url: 'http://35.233.171.147/upload',
+            type: 'POST',
+            data: JSON.stringify(data),
+            // dataType: 'json',
+            // jsonpCallback: 'data',
+            // dataType: 'text',
+            contentType: 'application/json;charset=UTF-8',
+            timeout: 10000000
+          })
+          .done(function(res) {
+            that.message = null
+            that.gib = res
+            that.restart()
+            that.status = 'Send File'
+            that.related = []
+            for (let i=0; i < that.gib.nodes.length; i++){
+              that.related.push([])
+            }
+            that.redLinks = []
+            for (let i=0; i < that.gib.links.length; i++){
+              that.redLinks.push([])
+            }
+          })
+          .fail(function(XMLHttpRequest, textStatus, errorThrown) {
+            that.status = 'Send File'
+            swal('An error occurred! Please send us a message from the contact.')
+          })
+        } else {
+          console.log('direct')
+          that.gib = that.graph
           that.restart()
           that.status = 'Send File'
           that.related = []
@@ -239,11 +259,7 @@ export default {
           for (let i=0; i < that.gib.links.length; i++){
             that.redLinks.push([])
           }
-        })
-        .fail(function(XMLHttpRequest, textStatus, errorThrown) {
-          that.status = 'Send File'
-          swal('An error occurred! Please send us a message from the contact.')
-        })
+        }
       }
     },
     restart: function() {
@@ -599,7 +615,7 @@ export default {
 }
 
 .layoutButton {
-	width: 45%;
+  width: 45%;
 }
 
 .el-container {
