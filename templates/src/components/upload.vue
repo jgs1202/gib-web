@@ -216,7 +216,7 @@ export default {
         data.data = that.graph
         data.layout = that.layout
         // console.log(typeof JSON.stringify(data))
-        if (that.layout != 'Direct') {
+        if (that.layout != 'Direct (for developer)') {
           $.ajax({
             // url: 'http://35.233.171.147:80/upload',
             url: 'http://35.233.171.147/upload',
