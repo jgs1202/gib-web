@@ -81,10 +81,10 @@ export default {
         svgWigth: 960,
         svgHeight: 600,
         margin: {
-          top: 2,
-          right: 2,
-          bottom: 2,
-          left: 2
+          top: 20,
+          right: 20,
+          bottom: 20,
+          left: 20
         }
       },
       nodes: [],
@@ -113,8 +113,11 @@ export default {
     let form = document.forms.form
     // ファイルが読み込まれた時の処理
     form.file.addEventListener('change', that.load, false)
+    var dotSpacing = 0,
+      dotWidth = that.settings.svgWigth / (2 * (10 + 1)),
+      dotHeight = that.settings.svgHeight / (2 * 20);
     that.zoom = d3.zoom()
-      .scaleExtent([1 / 2, 12])
+      .scaleExtent([1, 1/10])
       .on('zoom', that.zoomed)
     d3.select("svg")
       // .attr("width", that.settings.svgWigth)
