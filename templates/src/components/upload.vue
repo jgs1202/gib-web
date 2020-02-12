@@ -371,23 +371,23 @@ export default {
 
         let x_margin = 5
         let y_margin = 12
-        d3.select('svg').append('g')
-          .attr('class', 'groupName')
-          .selectAll('text')
-          .data(that.gib.groups)
-          .enter().append("text")
-          .text(function(d, num) {
-            return d.name
-          })
-          .attr('x', function(d, num) {
-            return d.x + x_margin
-          })
-          .attr('y', function(d, num) {
-            return d.y + y_margin
-          })
-          .attr("font-family", "sans-serif")
-          .attr("font-size", "10px")
-          .attr("fill", "black");
+        // d3.select('svg').append('g')
+        //   .attr('class', 'groupName')
+        //   .selectAll('text')
+        //   .data(that.gib.groups)
+        //   .enter().append("text")
+        //   .text(function(d, num) {
+        //     return d.name
+        //   })
+        //   .attr('x', function(d, num) {
+        //     return d.x + x_margin
+        //   })
+        //   .attr('y', function(d, num) {
+        //     return d.y + y_margin
+        //   })
+        //   .attr("font-family", "sans-serif")
+        //   .attr("font-size", "10px")
+        //   .attr("fill", "black");
 
         d3.select("svg").append("g")
           .attr("class", "rect")

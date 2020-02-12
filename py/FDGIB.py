@@ -4,8 +4,9 @@ import os
 import math
 import json
 import networkx as nx
-from .PRISM import main as prism
+from PRISM import main as prism
 from statistics import mean
+from resize import sizing
 
 
 def force(data, width, height, groups):
@@ -22,11 +23,7 @@ def force(data, width, height, groups):
             if linkNum[i][j] != 0:
                 G.add_edge(i, i + j + 1, weight=linkNum[i][j])
 
-    # plt.figure(figsize=(9.6, 6))
-    pos = nx.spring_layout(G) #, k=10)
-    # nx.draw_networkx(G, pos)
-    # plt.ylim(1, -1)
-    # plt.show()
+    pos = nx.spring_layout(G)  #, k=10)
     xs, ys = [], []
     for i in range(length):
         temp = pos[i]
@@ -37,7 +34,7 @@ def force(data, width, height, groups):
         pos[i][0] += 450
         pos[i][1] += 300
 
-    ################################### width * height boxへの対応
+    ################ width * height boxへの対応 #####################
     area = width * height * 0.2
     unit = area / len(data['nodes'])
     for i in range(length):
@@ -45,13 +42,6 @@ def force(data, width, height, groups):
         data['groups'][i]['dy'] = data['groups'][i]['dx']
         data['groups'][i]['x'] = pos[i][0]
         data['groups'][i]['y'] = pos[i][1]
-
-    # import pylab as pl
-    # pl.xticks([0, width])
-    # pl.yticks([0, height])
-    # for i in data['groups']:
-    #     pl.gca().add_patch(pl.Rectangle(xy=[i['x'], height - i['y']], width=i['dx'], height=i['dy'], linewidth='1.0', fill=False))
-    # pl.show()
 
     data = prism(data, linkNum, width, height)
     return data
@@ -70,7 +60,6 @@ def count_link(data):
         source = data['nodes'][i['source']]['group']
         target = data['nodes'][i['target']]['group']
         if source != target:
-
             if source < target:
                 if linkNum[source][target - source] == 0:
                     linkNum[source][target - source] = 1
@@ -84,10 +73,32 @@ def count_link(data):
     return linkNum
 
 if __name__ == '__main__':
-    data = 1
+    width = 960
+    height = 600
     for i in os.listdir('../data/'):
         if i[-5:] == '.json':
             data = json.load(open('../data/' + i))
             break
-    # print(count_link(data))
-    force(data, 960, 600, 1)
+
+    groups = [[] for i in range(len(data['groups']))]
+    for i in range(len(data['nodes'])):
+        dic = {}
+        dic['number'] = i
+        dic['id'] = i
+        groups[data['nodes'][i]['group']].append(dic)
+    data = force(data, 960, 600, groups)
+    import pylab as pl
+    pl.xticks([0, width])
+    pl.yticks([0, height])
+    for i in data['groups']:
+        pl.gca().add_patch(pl.Rectangle(xy=[i['x'], i['y']], width=i['dx'], height=i['dy'], linewidth='1.0', fill=False))
+    pl.show()
+
+    data = sizing(data)
+
+    import pylab as pl
+    pl.xticks([0, width])
+    pl.yticks([0, height])
+    for i in data['groups']:
+        pl.gca().add_patch(pl.Rectangle(xy=[i['x'], height - i['y']], width=i['dx'], height=i['dy'], linewidth='1.0', fill=False))
+    pl.show()
