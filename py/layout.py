@@ -36,14 +36,12 @@ def application(data):
         if current > maxGroup:
             maxGroup = current
     groups = [[] for i in range(maxGroup + 1)]
-    print(len(groups))
 
     # make list 'groups' a list have nodes' index
     for i in range(length):
         dic = {}
         dic['number'] = i
         groups[nodes[i]['group']].append(dic)
-    print(len(groups))
 
     with_box = classify(data, groups, width, height)
     os.chdir('/home/jgs_kuee/gib-web/rust-fd-layout')
@@ -52,8 +50,11 @@ def application(data):
     f = open(file, 'w')
     json.dump(with_box, f, ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
     f.close()
+
+    # グループ内部のネットワーク描画
     cmd = 'cargo run --release --example gib-cli -- -f ' + file + ' > ' + file[:-5] + '-nodes.txt'
     os.system(cmd)
+
     data = add(file)
     cmd = ['rm ' + file, 'rm ' + file[:-5] + '-nodes.txt']
     for i in cmd:

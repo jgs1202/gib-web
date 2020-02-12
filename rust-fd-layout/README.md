@@ -3,8 +3,8 @@
 >install rust
 https://www.rust-lang.org/en-US/install.htm
 
->picture
+>image
 cargo run --release --example gib -- -f data/miserable-gib.json > output/picture.svg
 
 >coodinate
-cargo run --release --example gib-cli -- -f data/miserable-gib.json > output/coordinate.svg
+cargo run --release --example gib-cli -- -f data/miserable-gib.json > output/coordinate.json

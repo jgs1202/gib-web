@@ -13,10 +13,6 @@ from py.layout import application
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 api = Api(app)
-# context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-# context.load_cert_chain('cert.crt', 'server_secret.key')
-# datasetpart = {}
-# datasetparthourly = {}
 
 
 @app.after_request
@@ -27,16 +23,10 @@ def after_request(response):
     return response
 
 
-# @app.route("/")
-# def index():
-#     return render_template('index.html')
-
-
 @app.route('/upload', methods=['GET', 'POST'])
 def face_info():
     print(request.method)
     if request.method == "POST":
-        # stream = request.get_data()
         data = application(request.data)
         print(type(data))
         if data == 'error':

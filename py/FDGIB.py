@@ -8,22 +8,21 @@ from PRISM import main as prism
 from statistics import mean
 from resize import sizing
 
+# forcelayout (pythonライブラリ)を使えば良い結果が出るかも
+
 
 def force(data, width, height, groups):
     G = nx.Graph()
     length = len(data['groups'])
     G.add_nodes_from([i for i in range(length)])
-    # G.add_node(length)
-    # for i in range(length):
-    #     G.add_edge(i, length)
-    # calculate the number of links in each group
     linkNum = count_link(data)
     for i in range(len(linkNum)):
         for j in range(len(linkNum[i])):
             if linkNum[i][j] != 0:
                 G.add_edge(i, i + j + 1, weight=linkNum[i][j])
 
-    pos = nx.spring_layout(G)  #, k=10)
+    # 座標の決定
+    pos = nx.spring_layout(G)  #, k=1/len(data['nodes']))
     xs, ys = [], []
     for i in range(length):
         temp = pos[i]
@@ -34,7 +33,6 @@ def force(data, width, height, groups):
         pos[i][0] += 450
         pos[i][1] += 300
 
-    ################ width * height boxへの対応 #####################
     area = width * height * 0.2
     unit = area / len(data['nodes'])
     for i in range(length):

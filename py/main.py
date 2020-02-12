@@ -30,6 +30,7 @@ def run(graph_data, width, height):
         t['id'] = sizes[i][1]
 
     model = define_model(graph, K)
+    # 最適化のライブラリ
     solver = SolverFactory("glpk")
     result = solver.solve(model, tee=True, timelimit=30)
     opt_tree = [{

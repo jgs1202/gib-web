@@ -117,6 +117,7 @@ fn main() {
         let mut forces: Vec<Box<Force>> = Vec::new();
         forces.push(Box::new(LinkForce::new(&links)));
         let mut group_force = GroupForce::new(groups, node_groups);
+        // 内部部ネットワークの力
         group_force.strength = 0.028;
         // group_force.strength = 0.08;
         forces.push(Box::new(group_force));
